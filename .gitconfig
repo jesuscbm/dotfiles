@@ -1,0 +1,33 @@
+[user]
+	name = Jcbm52
+	email = jesuscbm52@gmail.com
+	name = Jesus
+[init]
+	defaultBranch = main
+[credential]
+	helper = store
+[alias]
+	logp = log --graph --oneline --decorate
+	acommit = commit -a
+	d = difftool
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
+[diff]
+    tool = kitty
+    guitool = kitty.gui
+[difftool]
+    prompt = false
+    trustExitCode = true
+[difftool "kitty"]
+    cmd = kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+    cmd = kitten diff $LOCAL $REMOTE
+[difftool]
+	prompt = true
+[advice]
+	addIgnoredFile = false

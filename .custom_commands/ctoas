@@ -1,0 +1,1 @@
+gcc -S -masm=intel $1 $2 $3 $4 $5

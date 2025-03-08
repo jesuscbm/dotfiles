@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-notifyd" version="1.0">
+  <property name="notify-location" type="string" value="top-right"/>
+  <property name="theme" type="empty"/>
+  <property name="initial-opacity" type="empty"/>
+  <property name="do-fadeout" type="empty"/>
+  <property name="applications" type="empty">
+    <property name="known_applications" type="array">
+      <value type="string" value="balena-etcher"/>
+      <value type="string" value="bleachbit"/>
+      <value type="string" value="blueman"/>
+      <value type="string" value="calibre"/>
+      <value type="string" value="discord_discord"/>
+      <value type="string" value="Firefox"/>
+      <value type="string" value="firefox_Firefox"/>
+      <value type="string" value="IceCat"/>
+      <value type="string" value="io.snapcraft.SessionAgent"/>
+      <value type="string" value="kitty"/>
+      <value type="string" value="nm-applet"/>
+      <value type="string" value="org.freedesktop.network-manager-applet"/>
+      <value type="string" value="org.gnome.Rhythmbox3"/>
+      <value type="string" value="org.gnome.Software"/>
+      <value type="string" value="org.xfce.Thunar"/>
+      <value type="string" value="spotify_spotify-1466e6d2-114c-4d16-b5d7-59f3a5ed7e22"/>
+      <value type="string" value="spotify_spotify-257ac71e-6b01-40af-92d4-50a5d4d5ea8c"/>
+      <value type="string" value="spotify_spotify-36183875-548f-4e3f-bc46-96be27cfa7e9"/>
+      <value type="string" value="spotify_spotify-3a9a949e-1049-4026-8e7c-faff4294a859"/>
+      <value type="string" value="spotify_spotify-6c744cd0-c80b-4d5c-9e88-ec968deae2a3"/>
+      <value type="string" value="spotify_spotify-7525117a-8725-480d-ba90-ae989f2234ab"/>
+      <value type="string" value="spotify_spotify-949439ba-7854-4553-af2a-05084a92b3a8"/>
+      <value type="string" value="spotify_spotify-ea512243-6e4b-4704-ac3a-ad1fb35765a8"/>
+      <value type="string" value="thunar-volman"/>
+      <value type="string" value="Thunderbird"/>
+      <value type="string" value="Transmission"/>
+      <value type="string" value="update-notifier"/>
+      <value type="string" value="Xfce volume control"/>
+      <value type="string" value="xfce4-power-manager"/>
+      <value type="string" value="xfce4-settings-helper"/>
+    </property>
+  </property>
+  <property name="log-max-size-enabled" type="bool" value="true"/>
+  <property name="date-time-custom-format" type="string" value="%a %H:%M:%S"/>
+</channel>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-panel" version="1.0">
+  <property name="panels" type="uint" value="1">
+    <property name="panel-0" type="empty">
+      <property name="position" type="string" value="p=8;x=683;y=752"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="2"/>
+        <value type="int" value="3"/>
+        <value type="int" value="4"/>
+        <value type="int" value="11"/>
+        <value type="int" value="6"/>
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="10"/>
+      </property>
+      <property name="background-style" type="uint" value="1"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="length-adjust" type="bool" value="true"/>
+      <property name="span-monitors" type="bool" value="false"/>
+      <property name="mode" type="uint" value="0"/>
+      <property name="autohide-behavior" type="uint" value="1"/>
+      <property name="leave-opacity" type="uint" value="58"/>
+      <property name="enable-struts" type="bool" value="true"/>
+    </property>
+    <property name="dark-mode" type="bool" value="true"/>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="whiskermenu">
+      <property name="launcher-show-tooltip" type="bool" value="false"/>
+      <property name="launcher-icon-size" type="int" value="3"/>
+      <property name="category-icon-size" type="int" value="3"/>
+      <property name="view-mode" type="int" value="1"/>
+      <property name="show-command-settings" type="bool" value="false"/>
+      <property name="show-command-logoutuser" type="bool" value="true"/>
+      <property name="show-command-restart" type="bool" value="true"/>
+      <property name="show-command-shutdown" type="bool" value="true"/>
+      <property name="favorites" type="array">
+        <value type="string" value="xfce4-web-browser.desktop"/>
+        <value type="string" value="xfce4-mail-reader.desktop"/>
+        <value type="string" value="xfce4-file-manager.desktop"/>
+        <value type="string" value="libreoffice-writer.desktop"/>
+        <value type="string" value="libreoffice-calc.desktop"/>
+        <value type="string" value="xfce4-terminal-emulator.desktop"/>
+        <value type="string" value="xfhelp4.desktop"/>
+      </property>
+      <property name="recent" type="array">
+        <value type="string" value="librewolf.desktop"/>
+        <value type="string" value="bsdgames-atc.desktop"/>
+        <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
+        <value type="string" value="org.gnome.Rhythmbox3.desktop"/>
+        <value type="string" value="xfce4-mime-settings.desktop"/>
+        <value type="string" value="xfce4-web-browser.desktop"/>
+        <value type="string" value="chromium_chromium.desktop"/>
+        <value type="string" value="calibre-gui.desktop"/>
+        <value type="string" value="fuse-gtk.desktop"/>
+        <value type="string" value="bsdgames-battlestar.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-2" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="false"/>
+    </property>
+    <property name="plugin-3" type="string" value="tasklist">
+      <property name="show-handle" type="bool" value="false"/>
+      <property name="flat-buttons" type="bool" value="true"/>
+      <property name="show-labels" type="bool" value="true"/>
+    </property>
+    <property name="plugin-4" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+      <property name="expand" type="bool" value="true"/>
+    </property>
+    <property name="plugin-6" type="string" value="notification-plugin"/>
+    <property name="plugin-7" type="string" value="indicator">
+      <property name="blacklist" type="array">
+        <value type="string" value="libappmenu.so"/>
+      </property>
+      <property name="square-icons" type="bool" value="true"/>
+      <property name="known-indicators" type="array">
+        <value type="string" value="libayatana-application.so"/>
+      </property>
+    </property>
+    <property name="plugin-8" type="string" value="power-manager-plugin"/>
+    <property name="plugin-9" type="string" value="pulseaudio">
+      <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="enable-mpris" type="bool" value="true"/>
+      <property name="enable-wnck" type="bool" value="true"/>
+      <property name="mixer-command" type="string" value="pavucontrol"/>
+      <property name="mpris-players" type="string" value="firefox.instance10760;firefox.instance13799;firefox.instance1616;firefox.instance1661;firefox.instance1704;firefox.instance20937;firefox.instance2349;firefox.instance2691;firefox.instance36086;firefox.instance55322;firefox.instance_1_104;firefox.instance_1_105;firefox.instance_1_113;firefox.instance_1_115;firefox.instance_1_127;firefox.instance_1_131;firefox.instance_1_134;firefox.instance_1_231;firefox.instance_1_288;firefox.instance_1_324;firefox.instance_1_356;firefox.instance_1_381;firefox.instance_1_408;firefox.instance_1_441;firefox.instance_1_55;firefox.instance_1_57;firefox.instance_1_58;firefox.instance_1_59;firefox.instance_1_60;firefox.instance_1_61;firefox.instance_1_62;firefox.instance_1_63;firefox.instance_1_64;firefox.instance_1_65;firefox.instance_1_67;firefox.instance_1_68;firefox.instance_1_69;firefox.instance_1_696;firefox.instance_1_71;firefox.instance_1_72;firefox.instance_1_73;firefox.instance_1_74;firefox.instance_1_75;firefox.instance_1_76;firefox.instance_1_78;firefox.instance_1_79;firefox.instance_1_80;firefox.instance_1_81;firefox.instance_1_84;firefox.instance_1_843;firefox.instance_1_87;firefox.instance_1_90;firefox.instance_1_91;firefox.instance_1_912;firefox.instance_1_93;firefox.instance_1_94;firefox.instance_1_970;parole;rhythmbox;spotify;vlc"/>
+      <property name="show-notifications" type="bool" value="true"/>
+      <property name="known-players" type="string" value="cmus;firefox;firefox-nightly;LibreWolf;org.gnome.Rhythmbox3;parole;spotify;Spotube;tor browser"/>
+    </property>
+    <property name="plugin-10" type="string" value="clock">
+      <property name="digital-format" type="string" value="%T"/>
+      <property name="mode" type="uint" value="2"/>
+      <property name="fuzziness" type="uint" value="0"/>
+      <property name="tooltip-format" type="string" value="%x"/>
+      <property name="show-seconds" type="bool" value="false"/>
+      <property name="true-binary" type="bool" value="false"/>
+      <property name="show-grid" type="bool" value="false"/>
+      <property name="digital-time-format" type="string" value="%T"/>
+      <property name="digital-layout" type="uint" value="3"/>
+    </property>
+    <property name="plugin-11" type="string" value="pager"/>
+  </property>
+  <property name="configver" type="int" value="2"/>
+</channel>

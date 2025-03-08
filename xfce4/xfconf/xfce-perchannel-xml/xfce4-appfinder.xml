@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<channel name="xfce4-appfinder" version="1.0">
+  <property name="actions" type="empty">
+    <property name="action-1" type="empty">
+      <property name="pattern" type="empty"/>
+      <property name="command" type="empty"/>
+      <property name="save" type="empty"/>
+    </property>
+    <property name="action-2" type="empty">
+      <property name="pattern" type="empty"/>
+      <property name="command" type="empty"/>
+      <property name="save" type="empty"/>
+    </property>
+    <property name="action-3" type="empty">
+      <property name="pattern" type="empty"/>
+      <property name="command" type="empty"/>
+      <property name="save" type="empty"/>
+    </property>
+    <property name="action-4" type="empty">
+      <property name="pattern" type="empty"/>
+      <property name="command" type="empty"/>
+      <property name="save" type="empty"/>
+    </property>
+    <property name="action-5" type="empty">
+      <property name="pattern" type="empty"/>
+      <property name="command" type="empty"/>
+      <property name="save" type="empty"/>
+    </property>
+    <property name="action-6" type="empty">
+      <property name="pattern" type="empty"/>
+      <property name="save" type="empty"/>
+      <property name="command" type="empty"/>
+    </property>
+  </property>
+  <property name="last" type="empty">
+    <property name="window-height" type="int" value="400"/>
+    <property name="window-width" type="int" value="400"/>
+    <property name="pane-position" type="int" value="180"/>
+  </property>
+</channel>

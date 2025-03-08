@@ -1,0 +1,7 @@
+#!/bin/bash
+if [[ $DIR_ENABLED -eq 1 ]]; then
+	DIR_ENABLED=0
+else
+	DIR_ENABLED=1
+fi
+	
