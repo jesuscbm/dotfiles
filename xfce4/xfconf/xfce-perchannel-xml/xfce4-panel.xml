@@ -49,6 +49,7 @@
         <value type="string" value="xfhelp4.desktop"/>
       </property>
       <property name="recent" type="array">
+        <value type="string" value="xfhelp4.desktop"/>
         <value type="string" value="librewolf.desktop"/>
         <value type="string" value="bsdgames-atc.desktop"/>
         <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
@@ -58,7 +59,6 @@
         <value type="string" value="chromium_chromium.desktop"/>
         <value type="string" value="calibre-gui.desktop"/>
         <value type="string" value="fuse-gtk.desktop"/>
-        <value type="string" value="bsdgames-battlestar.desktop"/>
       </property>
     </property>
     <property name="plugin-2" type="string" value="separator">

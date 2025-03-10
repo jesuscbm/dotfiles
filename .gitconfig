@@ -10,6 +10,8 @@
 	logp = log --graph --oneline --decorate
 	acommit = commit -a
 	d = difftool
+	c = checkout
+	s = status
 [merge]
 	tool = nvimdiff
 	conflictstyle = diff3

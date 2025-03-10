@@ -8,6 +8,7 @@
     - Cowsay, Fortune, BSD-games, pipes-sh, 
 
 ## Complicated packages
+- BSPWM
 - Custom commands!!!! And their source code if needed (ball and dsay)
 - KeePassXC - IMPORTANT TO RECOVER THE DATABASE
 - Kitty
