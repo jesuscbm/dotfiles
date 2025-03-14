@@ -23,7 +23,7 @@ cmd mkfile ${{
 }}
 
 cmd setwallpaper ${{
-    setwallpaper "$f"
+    cp "$f" -t ~/Downloads/.wallpaper/
 }}
 
 # Archive bindings
@@ -45,7 +45,7 @@ cmd trash ${{
   while [ "$files" ]; do
     file=${files%%;*}
 
-    trashy put "$(basename "$file")"
+    trash put "$(basename "$file")"
     if [ "$files" = "$file" ]; then
       files=''
     else
@@ -115,18 +115,14 @@ map c
 map d
 map m
 
-map co $vscodium "$f"
-map cf $dotbare fadd -f
-
 map au unarchive
-map ae $wine "$f"
 
 # Basic Functions
 map . set hidden!
 map dd trash
-map u $trashy restore -r 0
-map dr $trashy restore
-map de $trashy empty --all
+map u $trash restore -r 0
+map dr $trash restore
+map de $trash empty --all
 map p paste
 map x cut
 map y copy
@@ -139,9 +135,11 @@ map C clear
 
 # Movement
 map gc cd ~/.config
-map gD cd ~/documents
-map gd cd ~/downloads
-map gp cd ~/pictures
+map gm cd ~/Music
+map ge cd ~/Desktop
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map gp cd ~/Pictures
 map gr cd ~/repos
 map gv cd ~/videos
 map gs cd ~/.local/bin

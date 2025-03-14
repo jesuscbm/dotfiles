@@ -70,19 +70,19 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    zsh-autosuggestions
-    git
-    extract 
-    web-search 
-    yum 
-    git-extras 
-    docker 
-    vagrant
-)
-
-source $ZSH/oh-my-zsh.sh
-
+# plugins=(
+#     zsh-autosuggestions
+#     git
+#     extract 
+#     web-search 
+#     yum 
+#     git-extras 
+#     docker 
+#     vagrant
+# )
+#
+# source $ZSH/oh-my-zsh.sh
+#
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -129,14 +129,30 @@ precmd() {
     NEWLINE=$'\n'
 
     PROMPT=${debian_chroot:+($debian_chroot)}%F{015}┌──[%f$PS1_NAME%F{015}]%f$PS1_BRANCH$NEWLINE╰─$PS1_STATUS\$\ %f 
-    # RPROMPT=%F{111}%K{000}[%D{%f/%m/%y}]
+
+    # JOBS=$(if [[ $(jobs | wc -l) -gt 0 ]]; then printf "%%F{158}Jobs %%j%%f "; fi)
+    JOBS="%F{117}Jobs: %j %f"
+
+    BATLEVEL=$(cat /sys/class/power_supply/BAT1/capacity)
+    if [ "$BATLEVEL" -ge 50 ]; then
+	# Green to Yellow (154 to 190)
+	BATCOLOR=$((154 + (190 - 154) * (100 - $BATLEVEL) / 50))
+    else
+	# Yellow to Red (190 to 196)
+	BATCOLOR=$((190 + (196 - 190) * (50 - $BATLEVEL) / 50))
+    fi
+    BATTERY=%F{$BATCOLOR}Battery:\ $BATLEVEL%%%f 
+
+    RPROMPT=$(if [[ $COLUMNS -ge 60 ]]; then echo $JOBS$BATTERY; fi)
 }
-setopt prompt_subst
+setopt PROMPT_SUBST
+setopt TRANSIENT_RPROMPT
 
 # Alias
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ls='ls --color=auto'
 alias tonto='echo no hablas de nacho, eso esta claro'
 alias givemeass='objdump -drwC -Mintel'
 alias nv="nvim"
@@ -154,6 +170,14 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias danisay="fortune | tr '\\n' ' ' | xargs -I{} -0 dsay \"{}\""
 alias zotyalbum='zotify --output "new/{artist}/{album}/{track_number}-{artists} - {song_name}"'
 alias lf='/home/jesuscbm/.config/lf/lf-kitty'
+alias rt='trash'
+alias rm='echo Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
+
+# KEYBINDINGS
+bindkey '\e[1;5C' forward-word  # Ctrl + Right Arrow
+bindkey '\e[1;5D' backward-word # Ctrl + Left Arrow
+bindkey '^H' backward-kill-word	# Ctrl + Basckspace
+
 #PATH variable
 export PATH=$PATH:~/.custom_commands:/usr/local/texlive/2024/bin/x86_64-linux:~/jdk-23.0.2/bin:~/Documents/apache-maven-3.9.9/bin
 

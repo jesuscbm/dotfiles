@@ -5,7 +5,7 @@ DOTDIRS="$HOME/Downloads/.wallpaper/ $HOME/.custom_commands/ $HOME/.config/zotif
 
 for i in $DOTFILES; do
 	echo "Copying $(basename $i) file"
-	cp $i -t .
+	rsync -av $i .
 done
 
 for i in $DOTDIRS; do

@@ -15,6 +15,7 @@
 - Lf
 - LibreWolf
 - Nvim - Changed cmp default keybinds to use ctrl+up and ctrl+down
+- Trashy
 - ZSH
 - Zotify - Including changing app.py to include a sleep
 - Zoxide

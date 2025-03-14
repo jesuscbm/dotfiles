@@ -1,89 +1,29 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
-[/home/jesuscbm/Desktop/ball.c]
-row=1
-col=3
-
-[/home/jesuscbm/Desktop/org.gnome.Software.desktop]
-row=1
-col=1
-
-[/home/jesuscbm/Desktop/thunderbird.desktop]
-row=0
-col=1
-
-[/home/jesuscbm/Desktop/Federal_Income_Tax_Data_Update.xlsx]
-row=0
-col=10
-
-[/home/jesuscbm/Desktop/dsay.c]
-row=4
-col=3
-
-[/home/jesuscbm/Desktop/mortality gov employees.pdf]
-row=0
-col=11
-
-[/home/jesuscbm/Desktop/packages.sh]
-row=3
-col=2
-
 [/home/jesuscbm/Desktop/BLAZQUEZ_MARTINEZ_JESUS_CIPRIANO___49425413T.p12]
 row=0
 col=3
 
-[/home/jesuscbm/Desktop/Analisis]
+[/home/jesuscbm/Desktop/discord_discord.desktop]
 row=5
-col=0
-
-[/home/jesuscbm/Desktop/xfce4-web-browser.desktop]
-row=4
 col=1
-
-[/home/jesuscbm/Desktop/Firefox.desktop]
-row=1
-col=2
-
-[/home/jesuscbm/Desktop/Eclipse IDE for Java Developers - 2024-12.desktop]
-row=5
-col=2
-
-[/home/jesuscbm/Desktop/install_in_arch.md]
-row=6
-col=3
-
-[/home/jesuscbm/Desktop/Rol]
-row=3
-col=0
-
-[/home/jesuscbm/Desktop/delete_snap]
-row=2
-col=2
-
-[/home/jesuscbm/Desktop/IDA Freeware 8.3.desktop]
-row=4
-col=2
-
-[/home/jesuscbm/Desktop/uam]
-row=6
-col=11
 
 [/home/jesuscbm/Desktop/code.desktop]
 row=0
 col=2
 
-[/home/jesuscbm/Desktop/kitty.desktop]
+[/home/jesuscbm/Desktop/crash.log]
 row=6
-col=0
+col=3
 
-[/home/jesuscbm/Desktop/GIMP.desktop]
+[/home/jesuscbm/Desktop/newton_prueba.m]
+row=6
+col=2
+
+[/home/jesuscbm/Desktop/Musica]
 row=2
-col=1
-
-[/home/jesuscbm/Desktop/spotify_spotify.desktop]
-row=6
-col=1
+col=0
 
 [/home/jesuscbm/Desktop/xfce4-terminal.desktop]
 row=3
@@ -93,33 +33,101 @@ col=1
 row=5
 col=3
 
+[/home/jesuscbm/Desktop/GIMP.desktop]
+row=2
+col=1
+
+[/home/jesuscbm/Desktop/Books]
+row=4
+col=0
+
+[/home/jesuscbm/Desktop/Rol]
+row=3
+col=0
+
+[/home/jesuscbm/Desktop/IDA Freeware 8.3.desktop]
+row=4
+col=2
+
+[/home/jesuscbm/Desktop/uam]
+row=6
+col=11
+
+[/home/jesuscbm/Desktop/packages.sh]
+row=3
+col=2
+
+[/home/jesuscbm/Desktop/dsay.c]
+row=4
+col=3
+
+[/home/jesuscbm/Desktop/ball.c]
+row=1
+col=3
+
 [/home/jesuscbm/Desktop/FreeYourMusic-9.10.0.AppImage]
 row=3
 col=3
 
-[/home/jesuscbm/Desktop/a.out]
-row=6
+[/home/jesuscbm/Desktop/Firefox.desktop]
+row=1
 col=2
 
-[/home/jesuscbm/Desktop/Programming]
+[/home/jesuscbm/Desktop/Analisis]
 row=5
-col=11
-
-[/home/jesuscbm/Desktop/Musica]
-row=2
 col=0
 
-[/home/jesuscbm/Desktop/discord_discord.desktop]
-row=5
+[/home/jesuscbm/Desktop/newtondif.m]
+row=0
 col=1
+
+[/home/jesuscbm/Desktop/delete_snap]
+row=2
+col=2
+
+[/home/jesuscbm/Desktop/Federal_Income_Tax_Data_Update.xlsx]
+row=0
+col=10
+
+[/home/jesuscbm/Desktop/org.gnome.Software.desktop]
+row=1
+col=1
+
+[/home/jesuscbm/Desktop/xfce4-web-browser.desktop]
+row=4
+col=1
+
+[/home/jesuscbm/Desktop/kitty.desktop]
+row=6
+col=0
+
+[/home/jesuscbm/Desktop/mortality gov employees.pdf]
+row=0
+col=11
+
+[/home/jesuscbm/Desktop/Eclipse IDE for Java Developers - 2024-12.desktop]
+row=5
+col=2
+
+[/home/jesuscbm/Desktop/Mitchell Cohen - Princeton Readings in Political Thought_ Essential Texts from Plato to Populism (2018, Princeton University Press) - libgen.li.epub]
+row=3
+col=4
 
 [/home/jesuscbm/Desktop/Screenshot_2025-03-04_19-26-10.png]
 row=2
 col=3
 
-[/home/jesuscbm/Desktop/Books]
-row=4
-col=0
+[/home/jesuscbm/Desktop/spotify_spotify.desktop]
+row=6
+col=1
+
+[/home/jesuscbm/Desktop/History Of Political Philosophy (Leo Strauss Joseph Cropsey) (Z-Library).epub]
+row=2
+col=4
+
+[/home/jesuscbm/Desktop/Programming]
+row=5
+col=11
 
 [Trash]
 row=0
