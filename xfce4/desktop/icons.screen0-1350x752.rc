@@ -9,16 +9,12 @@ col=3
 row=5
 col=1
 
+[/home/jesuscbm/Desktop/hola.txt.gpg]
+row=3
+col=4
+
 [/home/jesuscbm/Desktop/code.desktop]
 row=0
-col=2
-
-[/home/jesuscbm/Desktop/crash.log]
-row=6
-col=3
-
-[/home/jesuscbm/Desktop/newton_prueba.m]
-row=6
 col=2
 
 [/home/jesuscbm/Desktop/Musica]
@@ -28,10 +24,6 @@ col=0
 [/home/jesuscbm/Desktop/xfce4-terminal.desktop]
 row=3
 col=1
-
-[/home/jesuscbm/Desktop/lfdoc.md]
-row=5
-col=3
 
 [/home/jesuscbm/Desktop/GIMP.desktop]
 row=2
@@ -49,13 +41,17 @@ col=0
 row=4
 col=2
 
-[/home/jesuscbm/Desktop/uam]
-row=6
-col=11
-
 [/home/jesuscbm/Desktop/packages.sh]
 row=3
 col=2
+
+[/home/jesuscbm/Desktop/GR2202_DanielJesusAlejandro.zip]
+row=3
+col=3
+
+[/home/jesuscbm/Desktop/uam]
+row=6
+col=11
 
 [/home/jesuscbm/Desktop/dsay.c]
 row=4
@@ -65,9 +61,13 @@ col=3
 row=1
 col=3
 
-[/home/jesuscbm/Desktop/FreeYourMusic-9.10.0.AppImage]
-row=3
-col=3
+[/home/jesuscbm/Desktop/aa.class]
+row=5
+col=4
+
+[/home/jesuscbm/Desktop/a.java]
+row=1
+col=4
 
 [/home/jesuscbm/Desktop/Firefox.desktop]
 row=1
@@ -89,6 +89,10 @@ col=2
 row=0
 col=10
 
+[/home/jesuscbm/Desktop/Screenshot_2025-04-21_19-52-07.png]
+row=4
+col=4
+
 [/home/jesuscbm/Desktop/org.gnome.Software.desktop]
 row=1
 col=1
@@ -109,21 +113,29 @@ col=11
 row=5
 col=2
 
-[/home/jesuscbm/Desktop/Mitchell Cohen - Princeton Readings in Political Thought_ Essential Texts from Plato to Populism (2018, Princeton University Press) - libgen.li.epub]
-row=3
+[/home/jesuscbm/Desktop/aa.java]
+row=0
 col=4
 
-[/home/jesuscbm/Desktop/Screenshot_2025-03-04_19-26-10.png]
+[/home/jesuscbm/Desktop/docs]
 row=2
+col=3
+
+[/home/jesuscbm/Desktop/fb.asm]
+row=2
+col=4
+
+[/home/jesuscbm/Desktop/hola.txt]
+row=6
+col=3
+
+[/home/jesuscbm/Desktop/a]
+row=5
 col=3
 
 [/home/jesuscbm/Desktop/spotify_spotify.desktop]
 row=6
 col=1
-
-[/home/jesuscbm/Desktop/History Of Political Philosophy (Leo Strauss Joseph Cropsey) (Z-Library).epub]
-row=2
-col=4
 
 [/home/jesuscbm/Desktop/Programming]
 row=5

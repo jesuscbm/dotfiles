@@ -50,15 +50,15 @@
       </property>
       <property name="recent" type="array">
         <value type="string" value="librewolf.desktop"/>
-        <value type="string" value="calibre-gui.desktop"/>
-        <value type="string" value="org.gnome.Cheese.desktop"/>
-        <value type="string" value="xfhelp4.desktop"/>
-        <value type="string" value="bsdgames-atc.desktop"/>
-        <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
-        <value type="string" value="org.gnome.Rhythmbox3.desktop"/>
-        <value type="string" value="xfce4-mime-settings.desktop"/>
+        <value type="string" value="afirma.desktop"/>
         <value type="string" value="xfce4-web-browser.desktop"/>
+        <value type="string" value="calibre-gui.desktop"/>
+        <value type="string" value="org.gnome.Rhythmbox3.desktop"/>
         <value type="string" value="chromium_chromium.desktop"/>
+        <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
+        <value type="string" value="gucharmap.desktop"/>
+        <value type="string" value="discord_discord.desktop"/>
+        <value type="string" value="bsdgames-wump.desktop"/>
       </property>
     </property>
     <property name="plugin-2" type="string" value="separator">
@@ -92,7 +92,7 @@
       <property name="mixer-command" type="string" value="pavucontrol"/>
       <property name="mpris-players" type="string" value="firefox.instance10760;firefox.instance13799;firefox.instance1616;firefox.instance1661;firefox.instance1704;firefox.instance20937;firefox.instance2349;firefox.instance2691;firefox.instance36086;firefox.instance55322;firefox.instance_1_104;firefox.instance_1_105;firefox.instance_1_113;firefox.instance_1_115;firefox.instance_1_127;firefox.instance_1_131;firefox.instance_1_134;firefox.instance_1_231;firefox.instance_1_288;firefox.instance_1_324;firefox.instance_1_356;firefox.instance_1_381;firefox.instance_1_408;firefox.instance_1_441;firefox.instance_1_55;firefox.instance_1_57;firefox.instance_1_58;firefox.instance_1_59;firefox.instance_1_60;firefox.instance_1_61;firefox.instance_1_62;firefox.instance_1_63;firefox.instance_1_64;firefox.instance_1_65;firefox.instance_1_67;firefox.instance_1_68;firefox.instance_1_69;firefox.instance_1_696;firefox.instance_1_71;firefox.instance_1_72;firefox.instance_1_73;firefox.instance_1_74;firefox.instance_1_75;firefox.instance_1_76;firefox.instance_1_78;firefox.instance_1_79;firefox.instance_1_80;firefox.instance_1_81;firefox.instance_1_84;firefox.instance_1_843;firefox.instance_1_87;firefox.instance_1_90;firefox.instance_1_91;firefox.instance_1_912;firefox.instance_1_93;firefox.instance_1_94;firefox.instance_1_970;parole;rhythmbox;spotify;vlc"/>
       <property name="show-notifications" type="bool" value="true"/>
-      <property name="known-players" type="string" value="cmus;firefox;firefox-nightly;LibreWolf;org.gnome.Rhythmbox3;parole;spotify;Spotube;tor browser"/>
+      <property name="known-players" type="string" value="Chromium;cmus;firefox;firefox-nightly;LibreWolf;org.gnome.Rhythmbox3;parole;spotify;Spotube;tor browser"/>
     </property>
     <property name="plugin-10" type="string" value="clock">
       <property name="digital-format" type="string" value="%T"/>

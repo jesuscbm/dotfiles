@@ -3,7 +3,7 @@ last_user=
 last_extension=png
 screenshot_dir=file:/home/jesuscbm/Desktop
 enable_imgur_upload=true
-action=1
+action=2
 custom_action_command=/usr/libexec/xfce4/screenshooter/scripts/imgur-upload.sh %f %imgur_client_id
 show_in_folder=false
 

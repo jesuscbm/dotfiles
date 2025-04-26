@@ -28,7 +28,6 @@
 - LibreWolf info
 
 ## Other
-- 
 - Desktop, Documents, Music, Pictures
 - Wallpapers
 

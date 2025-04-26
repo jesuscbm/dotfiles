@@ -12,6 +12,7 @@ require('java').setup({
         'build.gradle.kts',
         '.git',
     },
+    cmd = { 'java' },
 })
 
 --  This function gets run when an LSP attaches to a particular buffer.
@@ -206,3 +207,7 @@ require('lspconfig').jdtls.setup({
         end,
     },
 })
+
+local config = require("fzf-lua.config")
+local actions = require("trouble.sources.fzf").actions
+config.defaults.actions.files["ctrl-t"] = actions.open

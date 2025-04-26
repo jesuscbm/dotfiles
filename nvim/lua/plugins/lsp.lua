@@ -240,4 +240,47 @@ return {
 			table.insert(require("cmp").get_config().sources, { name = "git" })
 		end,
 	},
+	{
+		"rcasia/neotest-java",
+		ft = "java",
+		dependencies = {
+			"mfussenegger/nvim-jdtls",
+			"mfussenegger/nvim-dap",  -- for the debugger
+			"rcarriga/nvim-dap-ui",   -- recommended
+			"theHamsta/nvim-dap-virtual-text", -- recommended
+		},
+		init = function()
+			local keys = {
+				-- Run test file
+				{ "<leader>tt", function() require("neotest").run.run(vim.fn.expand("%")) end,                       mode = "n" },
+				-- Run nearest test
+				{ "<leader>te", function() require("neotest").run.run() end,                                         mode = "n" },
+				-- Debug test file
+				{ "<leader>tD", function() require("neotest").run.run({ strategy = "dap" }) end,                     mode = "n" },
+				-- Debug nearest test
+				{ "<leader>td", function() require("neotest").run.run({ vim.fn.expand("%"), strategy = "dap" }) end, mode = "n" },
+			}
+
+			-- Apply keymaps
+			for _, keymap in ipairs(keys) do
+				vim.keymap.set("n", keymap[1], keymap[2], { noremap = true, silent = true })
+			end
+		end
+	},
+	{
+		"nvim-neotest/neotest",
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+			"nvim-lua/plenary.nvim",
+			"antoinemadec/FixCursorHold.nvim",
+			"nvim-treesitter/nvim-treesitter"
+		},
+		opts = {
+			adapters = {
+				["neotest-java"] = {
+					-- config here
+				},
+			},
+		},
+	},
 }

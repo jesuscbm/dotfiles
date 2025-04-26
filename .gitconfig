@@ -12,6 +12,8 @@
 	d = difftool
 	c = checkout
 	s = status
+	p = pull
+	a = add
 [merge]
 	tool = nvimdiff
 	conflictstyle = diff3

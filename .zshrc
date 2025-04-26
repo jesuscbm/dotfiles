@@ -194,9 +194,9 @@ selection=$(echo "apt dragon-and-cow kangaroo pony-smaller turtle bud-frogs duck
 
 if [[ $COLUMNS -ge 70 ]]; then
     if [[ $(($RANDOM % 2 )) -eq 1 ]]; then
-	fortune | cowsay -f $selection   
+	fortune | tr '\n' ' ' | cowsay -f $selection   
     else
-	fortune | cowthink -f $selection   
+	fortune | tr '\n' ' ' | cowthink -f $selection   
     fi
     echo
 fi

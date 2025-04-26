@@ -11,7 +11,7 @@
     <property name="font" type="string" value="Sans Bold 20"/>
   </property>
   <property name="folders" type="empty">
-    <property name="last-used-media" type="string" value="/home/jesuscbm/.local/share/nvim/lazy/brainrot.nvim"/>
+    <property name="last-used-media" type="string" value="/home/jesuscbm/Desktop/uam/PAdSofUAM2/p3/resources"/>
   </property>
   <property name="window" type="empty">
     <property name="maximized" type="bool" value="true"/>
