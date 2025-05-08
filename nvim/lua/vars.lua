@@ -36,4 +36,6 @@ vim.opt.scrolloff = 7 -- Scroll when we are this much away from margins
 vim.opt.showmode = false -- We show the mode with a statusline plugin
 vim.g.have_nerd_font = true -- We are that much of a nerd
 
+vim.opt.relativenumber = true
+
 vim.g.swapfile = false

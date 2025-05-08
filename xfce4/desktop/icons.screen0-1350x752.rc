@@ -9,12 +9,16 @@ col=3
 row=5
 col=1
 
-[/home/jesuscbm/Desktop/hola.txt.gpg]
-row=3
-col=4
+[/home/jesuscbm/Desktop/borrar]
+row=5
+col=3
 
 [/home/jesuscbm/Desktop/code.desktop]
 row=0
+col=2
+
+[/home/jesuscbm/Desktop/nombres.png]
+row=6
 col=2
 
 [/home/jesuscbm/Desktop/Musica]
@@ -45,10 +49,6 @@ col=2
 row=3
 col=2
 
-[/home/jesuscbm/Desktop/GR2202_DanielJesusAlejandro.zip]
-row=3
-col=3
-
 [/home/jesuscbm/Desktop/uam]
 row=6
 col=11
@@ -62,7 +62,7 @@ row=1
 col=3
 
 [/home/jesuscbm/Desktop/aa.class]
-row=5
+row=4
 col=4
 
 [/home/jesuscbm/Desktop/a.java]
@@ -90,7 +90,7 @@ row=0
 col=10
 
 [/home/jesuscbm/Desktop/Screenshot_2025-04-21_19-52-07.png]
-row=4
+row=3
 col=4
 
 [/home/jesuscbm/Desktop/org.gnome.Software.desktop]
@@ -125,17 +125,13 @@ col=3
 row=2
 col=4
 
-[/home/jesuscbm/Desktop/hola.txt]
-row=6
-col=3
-
-[/home/jesuscbm/Desktop/a]
-row=5
-col=3
-
 [/home/jesuscbm/Desktop/spotify_spotify.desktop]
 row=6
 col=1
+
+[/home/jesuscbm/Desktop/aa]
+row=3
+col=3
 
 [/home/jesuscbm/Desktop/Programming]
 row=5

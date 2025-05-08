@@ -198,6 +198,19 @@ require("mason-lspconfig").setup({
 })
 
 require('lspconfig').jdtls.setup({
+    settings = {
+        java = {
+            configuration = {
+                runtimes = {
+                    {
+                        name = "JavaSE-23",
+                        path = "/home/jesuscbm/jdk-23.0.2/",
+                        default = true,
+                    }
+                }
+            }
+        }
+    },
     handlers = {
         ['language/status'] = function(_, result)
             -- Print or whatever.

@@ -12,12 +12,14 @@
       <value type="string" value="blueman"/>
       <value type="string" value="calibre"/>
       <value type="string" value="discord_discord"/>
+      <value type="string" value="discord_discord_discord"/>
       <value type="string" value="Firefox"/>
       <value type="string" value="firefox_Firefox"/>
       <value type="string" value="IceCat"/>
       <value type="string" value="io.snapcraft.SessionAgent"/>
       <value type="string" value="kitty"/>
       <value type="string" value="nm-applet"/>
+      <value type="string" value="notify-send"/>
       <value type="string" value="org.freedesktop.network-manager-applet"/>
       <value type="string" value="org.gnome.Rhythmbox3"/>
       <value type="string" value="org.gnome.Software"/>
@@ -27,6 +29,7 @@
       <value type="string" value="spotify_spotify-257ac71e-6b01-40af-92d4-50a5d4d5ea8c"/>
       <value type="string" value="spotify_spotify-36183875-548f-4e3f-bc46-96be27cfa7e9"/>
       <value type="string" value="spotify_spotify-3a9a949e-1049-4026-8e7c-faff4294a859"/>
+      <value type="string" value="spotify_spotify-56f6e868-0c7f-492f-94df-80ac7d171136"/>
       <value type="string" value="spotify_spotify-6c744cd0-c80b-4d5c-9e88-ec968deae2a3"/>
       <value type="string" value="spotify_spotify-7525117a-8725-480d-ba90-ae989f2234ab"/>
       <value type="string" value="spotify_spotify-7e2446c6-6920-4da0-bc7c-92513e9ca31b"/>

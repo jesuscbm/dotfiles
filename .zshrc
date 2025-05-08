@@ -208,3 +208,6 @@ eval "$(zoxide init zsh)"
 export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="librewolf"
+
+export JAVA_HOME=/home/jesuscbm/jdk-23.0.2
+export PATH=$JAVA_HOME/bin:$PATH
