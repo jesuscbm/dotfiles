@@ -5,18 +5,23 @@
     - Python3.8 and 3.12
     - Cmus 
     - calibre
-    - Cowsay, Fortune, BSD-games, pipes-sh, 
+    - Cowsay, Fortune, BSD-games, pipes-sh
 
 ## Complicated packages
 - BSPWM
 - Custom commands!!!! And their source code if needed (ball and dsay)
 - KeePassXC - IMPORTANT TO RECOVER THE DATABASE
 - Kitty
+- Latex, mirar forma más ligera de instalarlo y usarlo con Pandoc (tectonic?)
 - Lf
 - LibreWolf
-- Nvim - Changed cmp default keybinds to use ctrl+up and ctrl+down
-- Retroarch
+- Nvim 
+    - Changed cmp default keybinds to use ctrl+up and ctrl+down
+    - Remove Java configuration
+    - Set up Cheatsheets
+    - Codeium
 - Trashy
+- Typst
 - ZSH
 - Zotify - Including changing app.py to include a sleep
 - Zoxide
@@ -31,4 +36,3 @@
 ## Other
 - Desktop, Documents, Music, Pictures
 - Wallpapers
-

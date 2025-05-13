@@ -2,7 +2,6 @@ return {
 	-- Quality of life improvements
 	{ "glacambre/firenvim",                 build = ":call firenvim#install(0)" },
 	{ "lukas-reineke/indent-blankline.nvim" },
-	{ "lervag/vimtex" },
 	{
 		"jiaoshijie/undotree",
 		dependencies = "nvim-lua/plenary.nvim",
@@ -39,45 +38,55 @@ return {
 		},
 	},
 	{
-		"sudormrfbin/cheatsheet.nvim",
-
-		dependencies = {
-			{ "nvim-telescope/telescope.nvim" },
-			{ "nvim-lua/popup.nvim" },
-			{ "nvim-lua/plenary.nvim" },
-		},
-		config = function()
-			require("cheatsheet").setup({
-				-- Whether to show bundled cheatsheets
-
-				-- For generic cheatsheets like default, unicode, nerd-fonts, etc
-				-- bundled_cheatsheets = {
-				--     enabled = {},
-				--     disabled = {},
-				-- },
-				bundled_cheatsheets = true,
-
-				-- For plugin specific cheatsheets
-				-- bundled_plugin_cheatsheets = {
-				--     enabled = {},
-				--     disabled = {},
-				-- }
-				bundled_plugin_cheatsheets = true,
-
-				-- For bundled plugin cheatsheets, do not show a sheet if you
-				-- don't have the plugin installed (searches runtimepath for
-				-- same directory name)
-				include_only_installed_plugins = true,
-
-				-- Key mappings bound inside the telescope window
-				telescope_mappings = {
-					["<CR>"] = require("cheatsheet.telescope.actions").select_or_fill_commandline,
-					["<A-CR>"] = require("cheatsheet.telescope.actions").select_or_execute,
-					["<C-Y>"] = require("cheatsheet.telescope.actions").copy_cheat_value,
-					["<C-E>"] = require("cheatsheet.telescope.actions").edit_user_cheatsheet,
+		'riodelphino/cheat.nvim',
+		opts = {
+			debug = false,   -- show debug msg (only for me)
+			readonly = false, -- true | false  ... false for editable
+			window = {
+				default = 'float', -- float | vsplit | hsplit
+				float = {
+					width = 0.8, -- ratio for nvim window
+					height = 0.9, -- ratio for nvim window
+					signcolumn = false, -- true | false ... Show signcolumn or not
+					number = true, -- true | false ... Show number or not
+					border = 'single', -- 'none'  'single' | 'double' | 'rounded' | 'solid'
 				},
-			})
-		end,
+				vsplit = {
+					height = 0.3, -- ratio for nvim window
+					position = 'bottom', -- bottom | top
+					signcolumn = false, -- true | false ... Show signcolumn or not
+					number = true, -- true | false ... Show number or not
+				},
+				hsplit = {
+					width = 0.5, -- ratio for nvim window
+					position = 'left', -- left | right
+					signcolumn = false, -- true | false ... Show signcolumn or not
+					number = true, -- true | false ... Show number or not
+				},
+			},
+			file = {
+				dir = '~/.config/nvim/cheatsheets', -- Cheatsheet directory
+				prefix = '',        -- Cheatsheet file's prefix.
+				ext = 'md',         -- Cheatsheet file's extension.
+			},
+			cheatsheets = {
+				filetypes = {                   -- Open the specific cheatsheet by file pattern.
+					lua = { '*.lua' },          -- will open 'lua.md' cheatsheet, if called on *.lua files
+					vim = { '*.vim', '*.vifmrc' }, -- The key 'vim' is the surfix of filename. ex.) cheat-vim.md
+					js = { '*.js', '*.mjs' },
+					css = { '*.css', '*.scss', '*.sass' }, -- Multiple filetypes are allowed.
+					md = { '*.md' },
+					php = { '*.php' },
+					html = { '*.html' },
+					typst = { '*.typ', '*.typst' },
+					latex = { '*.tex' },
+					-- Add more filetypes settings here.
+				},
+			},
+			keymaps = {
+				close = 'q', -- The keymap to close current cheat sheet. '<ESC>' is also good
+			},
+		},
 	},
 	{
 		"iamcco/markdown-preview.nvim",
@@ -88,7 +97,13 @@ return {
 		end,
 		ft = { "markdown" },
 	},
-	{ -- Has a lot, worth checking git
+	{
+		'chomosuke/typst-preview.nvim',
+		ft = 'typst',
+		version = '1.*',
+		opts = {}, -- lazy.nvim will implicitly calls `setup {}`
+	},
+	{        -- Has a lot, worth checking git
 		"echasnovski/mini.nvim",
 		version = "*",
 		config = function()

@@ -17,5 +17,6 @@ for i in $DOTDIRS; do
 	fi
 done
 
+apt list --manual-installed > paquetes.txt
 
 rm ./zotify/credentials.json

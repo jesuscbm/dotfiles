@@ -171,7 +171,7 @@ alias danisay="fortune | tr '\\n' ' ' | xargs -I{} -0 dsay \"{}\""
 alias zotyalbum='zotify --output "new/{artist}/{album}/{track_number}-{artists} - {song_name}"'
 alias lf='/home/jesuscbm/.config/lf/lf-kitty'
 alias rt='trash'
-alias rm='echo Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
+alias rm='echo "Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
 
 # KEYBINDINGS
 bindkey '\e[1;5C' forward-word  # Ctrl + Right Arrow

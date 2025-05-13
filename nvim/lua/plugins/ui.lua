@@ -16,14 +16,6 @@ return {
 			require("brainrot").setup({ auto_play = false }) -- Enable auto-play on startup
 		end,
 	},
-	{ -- Kitty integration. Allows to send commands to kitty
-		"jghauser/kitty-runner.nvim",
-		config = function()
-			require("kitty-runner").setup({
-				mode = "window",
-			})
-		end,
-	},
 	{
 		"kevinhwang91/nvim-ufo",
 		lazy = false,

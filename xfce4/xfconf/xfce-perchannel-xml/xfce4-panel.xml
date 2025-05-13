@@ -49,6 +49,7 @@
         <value type="string" value="xfhelp4.desktop"/>
       </property>
       <property name="recent" type="array">
+        <value type="string" value="xfce4-mime-settings.desktop"/>
         <value type="string" value="librewolf.desktop"/>
         <value type="string" value="calibre-gui.desktop"/>
         <value type="string" value="xfce4-terminal.desktop"/>
@@ -58,7 +59,6 @@
         <value type="string" value="org.gnome.Rhythmbox3.desktop"/>
         <value type="string" value="chromium_chromium.desktop"/>
         <value type="string" value="org.keepassxc.KeePassXC.desktop"/>
-        <value type="string" value="gucharmap.desktop"/>
       </property>
     </property>
     <property name="plugin-2" type="string" value="separator">
