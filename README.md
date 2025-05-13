@@ -6,10 +6,13 @@
     - Cmus 
     - calibre
     - Cowsay, Fortune, BSD-games, pipes-sh
+    - Transmission
 
 ## Complicated packages
-- BSPWM
+- Autofirma
+- Eduroam
 - Custom commands!!!! And their source code if needed (ball and dsay)
+- Hyprland and Wayland
 - KeePassXC - IMPORTANT TO RECOVER THE DATABASE
 - Kitty
 - Latex, mirar forma más ligera de instalarlo y usarlo con Pandoc (tectonic?)
