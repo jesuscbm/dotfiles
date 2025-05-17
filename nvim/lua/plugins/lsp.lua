@@ -1,6 +1,5 @@
 local vim = vim
 return {
-	{ 'nvim-java/nvim-java' },
 	{
 		-- Main LSP Configuration
 		"neovim/nvim-lspconfig",
@@ -10,10 +9,7 @@ return {
 			-- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
 			{ "williamboman/mason.nvim", opts = {} },
 			"williamboman/mason-lspconfig.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-
-			-- Useful status updates for LSP.
-			{ "j-hui/fidget.nvim",       opts = {} },
+			-- "WhoIsSethDaniel/mason-tool-installer.nvim",
 
 			-- Allows extra capabilities provided by nvim-cmp
 			"hrsh7th/cmp-nvim-lsp",
@@ -38,11 +34,28 @@ return {
 
 			format_on_save = nil,
 			formatters_by_ft = {
-				lua = { "lua_ls" },
+				lua = { "stylua" },
 				cpp = { "clang_format" },
 				c = { "clang_format" },
 				python = { "pyink" },
-				java = { "jdtls" },
+				bash = { "beautysh" },
+                sh = { "beautysh" },
+                zsh = { "beautysh" },
+                fish = { "beautysh" },
+				csh = { "beautysh" },
+				markdown = { "prettier" },
+                json = { "prettier" },
+                yaml = { "prettier" },
+                html = { "prettier" },
+                css = { "prettier" },
+                scss = { "prettier" },
+                javascript = { "prettier" },
+                typescript = { "prettier" },
+                javascriptreact = { "prettier" },
+                typescriptreact = { "prettier" },
+                vue = { "prettier" },
+                svelte = { "prettier" },
+				java = {},
 			},
 		},
 	},

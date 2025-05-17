@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# Set root pointer and screen power settings
+xsetroot -cursor_name left_ptr &
+xset -dpms
+xset s off
+xset s noblank
+
+# Launch keybindings
+pgrep -x sxhkd > /dev/null || sxhkd -c "$HOME/.config/bspwm/sxhkdrc" &
+
+# Picom (compositor)
+pkill picom
+picom -b &
+
+# Set environment variables
+export PATH="$HOME/.config/polybar/src:$PATH"
+export XDG_CURRENT_DESKTOP='bspwm'
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Monitor setup (custom)
+[ -x "$HOME/.config/polybar/src/MonitorSetup" ] && "$HOME/.config/polybar/src/MonitorSetup"
+
+# Launch Thunar daemon
+thunar --daemon &
+
+# BSPWM specific settings
+bspc monitor -d 1 2 3
+
+bspc config top_padding    22
+bspc config bottom_padding 0
+bspc config left_padding   0
+bspc config right_padding  0
+bspc config window_gap 2
+bspc config border_width 0
+bspc config split_ratio 0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config pointer_modifier mod1
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
+# Launch eww daemon if not running. TODO: Not use eww
+pgrep -x eww > /dev/null || eww -c "${HOME}"/.config/polybar/eww daemon &
+
+polybar top-bar &
+
+# Set system vars for polybar
+[ -x "$HOME/.config/polybar/src/SetSysVars" ] && "$HOME/.config/polybar/src/SetSysVars" &
+
+# Launch xsettingsd
+command -v xsettingsd >/dev/null && xsettingsd --config="${HOME}/.config/polybar/src/config/xsettingsd" >/dev/null 2>&1 &
+
+# Set wallpaper
+feh --randomize --bg-fill "$HOME/Downloads/.wallpaper" &
+
+# Set script to notify when low battery
+$HOME/.config/polybar/src/battery_notify
+
+# RULES
+bspc rule -a cmus-term state=floating
+
+bspc rule -a Gsimplecal state=floating layer=above follow=on
+bspc rule -a Blueman-manager state=floating layer=normal follow=off

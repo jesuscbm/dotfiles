@@ -1,9 +1,0 @@
-app=/usr/bin/display-im6.q16
-last_user=
-last_extension=png
-screenshot_dir=file:/home/jesuscbm/Desktop/uam/PAdSofUAM2/p4/Fotos/Caso 2
-enable_imgur_upload=true
-action=1
-custom_action_command=/usr/libexec/xfce4/screenshooter/scripts/imgur-upload.sh %f %imgur_client_id
-show_in_folder=false
-

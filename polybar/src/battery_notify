@@ -1,0 +1,28 @@
+#!/bin/bash
+
+LOW_THRESHOLD=20
+CRITICAL_THRESHOLD=10
+NOTIFIED_LOW=false
+NOTIFIED_CRITICAL=false
+
+ASSETS="$HOME/.config/polybar/src/assets"
+
+while true; do
+    CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
+    STATUS=$(cat /sys/class/power_supply/BAT1/status)
+
+    if [ "$STATUS" = "Discharging" ]; then
+        if [ "$CAPACITY" -le "$CRITICAL_THRESHOLD" ] && ! $NOTIFIED_CRITICAL; then
+            notify-send -u critical -i "$ASSETS/battery_critical.png" "Battery Critical" "Battery at $CAPACITY%"
+            NOTIFIED_CRITICAL=true
+        elif [ "$CAPACITY" -le "$LOW_THRESHOLD" ] && ! $NOTIFIED_LOW; then
+            notify-send -u normal -i "$ASSETS/battery_low.png" "Battery Low" "Battery at $CAPACITY%"
+            NOTIFIED_LOW=true
+        fi
+    else
+        NOTIFIED_LOW=false
+        NOTIFIED_CRITICAL=false
+    fi
+
+    sleep 60
+done

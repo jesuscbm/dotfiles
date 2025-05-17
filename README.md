@@ -1,41 +1,25 @@
-# Things to install and set up when I inevitably migrate to Arch Linux
+# My dotfiles
 
-## Just Install It Packages
-- Do `apt list --manual-installed` to track all installed packages. Among them:
-    - Python3.8 and 3.12
-    - Cmus 
-    - calibre
-    - Cowsay, Fortune, BSD-games, pipes-sh
-    - Transmission
+## Description
 
-## Complicated packages
+Dotfiles for my Linux setup, using Arch, BSPWM and polybar among other things.
+Meant for my personal use, but feel free to take what you want, most's not mine
+either way.
+
+![Desktop](./images/desktop.png) 
+
+## Todo list
 - Autofirma
-- Eduroam
-- Custom commands!!!! And their source code if needed (ball and dsay)
-- Hyprland and Wayland
 - KeePassXC - IMPORTANT TO RECOVER THE DATABASE
-- Kitty
 - Latex, mirar forma más ligera de instalarlo y usarlo con Pandoc (tectonic?)
-- Lf
-- LibreWolf
-- Nvim 
-    - Changed cmp default keybinds to use ctrl+up and ctrl+down
-    - Remove Java configuration
-    - Set up Cheatsheets
-    - Codeium
-- Trashy
+- Ranger
 - Typst
-- ZSH
-- Zotify - Including changing app.py to include a sleep
-- Zoxide
+- Screen record
 
-## Config
-- My dotfiles!!!!!
-- clang-format
-- Flat-Remix themes and icons. All appearance in general
-- NerdFont
-- LibreWolf info
+## Credits
 
-## Other
-- Desktop, Documents, Music, Pictures
-- Wallpapers
+I have taken inspiration and code from many projects, too many to remember, but special mention to:
+- [gh0stzk dotfiles. Took emma's rice polybar and dunst as a base](https://github.com/gh0stzk/dotfiles)  
+- [w8ste's Rofi theme](https://github.com/w8ste/Tokyonight-rofi-theme)
+- [sdhand's picom](https://github.com/sdhand/picom)
+- [jbirnick's polybar timer](https://github.com/jbirnick/polybar-timer)

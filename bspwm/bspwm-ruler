@@ -1,0 +1,172 @@
+#!/bin/bash
+
+RED='\e[41m'
+BLUE='\e[44m'
+ORANGE='\e[46m'
+NC='\e[0m'
+
+trap '[[ -e /tmp/rule_ops ]] && rm /tmp/rule_ops' EXIT SIGTERM
+rule_ops()
+{
+# make a temporary file for options
+	touch /tmp/rule_ops
+	# choose window state
+	window_state=$(echo -e "tiling\npseudo_tiled\nfloating\nfullscreen" | fzf-tmux -e --reverse --prompt='Select state for chosen window class >')
+	[ -n "$window_state" ] && echo -e "state=$window_state" >> /tmp/rule_ops
+
+	# choose if window  should be managed
+		window_manage=$(echo -e "on\noff" | fzf-tmux -e --reverse --prompt='Manage= >')
+		[ -n "$window_manage" ] && echo -e "manage=$window_manage" >> /tmp/rule_ops
+
+	# choose window layer
+		window_layer=$(echo -e "below\nnormal\nabove" | fzf-tmux -e --reverse --prompt='Layer= >')
+		[ -n "$window_layer" ] && echo -e "layer=$window_layer" >> /tmp/rule_ops
+
+	# choose window flags
+		window_flags=$(echo -e "sticky=on\nprivate=on\nlocked=on\nurgent=on\n " | fzf-tmux -e -m --reverse --prompt='Choose window flags (tab to select multiple, choose empty if you want none) >')
+		[ -n "$window_flags" ] && echo -e "$window_flags" >> /tmp/rule_ops
+
+		window_desktop=$(echo -e "$(bspc query -D)\nAny" | fzf-tmux -e --reverse --prompt='Desktop= >')
+		echo "$window_desktop" | {
+		read desk
+		if [ "$desk" = 'Any' ] ; then
+			echo ""
+		else
+			[ -n "$desk" ] && echo -e "desktop=$desk" >> /tmp/rule_ops
+		fi
+	}
+	# choose if window should be followed if it spawns on another desktop
+		window_follow=$(echo -e "on\noff" | fzf-tmux -e --reverse --prompt='Follow= >')
+		[ -n "$window_follow" ] && echo -e "follow=$window_follow" >> /tmp/rule_ops
+}
+add_rule()
+{
+	echo -e "Click on the window you wish to rule..."
+	class=$(xprop | awk '/WM_CLASS/ {print substr($4, 2, length($4)-2)}')
+	echo ""
+	echo -e "You have chosen $class."
+	read -s -n1
+	rule_ops
+		rule_command="bspc rule -a $class $(cat /tmp/rule_ops | xargs)"
+		$rule_command
+		echo "your rule is $rule_command. Would you like to make this rule permanent? (y/N)"
+		read -s -n1 yesno
+		case $yesno in
+			y|Y)
+				echo -e "$rule_command" >> $HOME/.config/bspwm/bspwmrc
+				echo -e "The command has been added to your bspwmrc. Press any key to continue."
+				read -s -n1
+				;;
+			*)
+				echo ""
+				echo -e "Okay. Press any key to continue."
+				read -s -n1
+				;;
+		esac
+	rm /tmp/rule_ops
+}
+disable_rule()
+{
+		for rule in $(bspc rule -l | fzf-tmux -e -m  --reverse --prompt='Select rules to disable (use TAB to toggle selection) >' | awk '{print substr($1, 1, length($1)-2)}'); do
+		bspc rule -r $rule
+	done
+}
+
+rm_rule()
+{
+		for rule in $(bspc rule -l | fzf-tmux -e -m  --reverse --prompt='Select rules to remove (use TAB to toggle selection) >' | awk '{print substr($1, 1, length($1)-2)}'); do
+		 	sed -i "/rule -a $rule/d" $HOME/.config/bspwm/bspwmrc
+		 	sed -i "/rule --add $rule/d" $HOME/.config/bspwm/bspwmrc
+	done
+}
+
+bspwm_cfg()
+{
+	for cfg in borderless_monocle gapless_monocle paddingless_monocle single_monocle history_aware_focus focus_by_distance focus_follows_pointer pointer_follows_focus ignore_ewmh_focus center_pseudo_tiled remove_disabled_monitors remove_unplugged_monitors merge_overlapping_monitors ; do
+	echo "$cfg $(bspc config $cfg)" >> /tmp/bspwm-configs
+	done
+	toggles=$(cat /tmp/bspwm-configs | fzf-tmux -e -m  --reverse --prompt='Select configs to toggle (use TAB to toggle selection) >')
+	for tog in $toggles; do
+		toggle=$(bspc config $tog | \
+    awk -vtoggle="true" \
+    '{ if ($1 == "true") toggle="false"; print toggle }')
+
+[[ ! "$toggle" == 'true' && ! "$toggle" == 'false' ]] && bspc config $tog true
+bspc config $tog $toggle
+	done
+	rm /tmp/bspwm-configs
+}
+
+
+main()
+{
+    while true; do
+    clear
+    echo ""
+    echo -e "                     ::Bspwm settings:: "
+    echo -e " ┌─────────────────────────────────────────────────────────────┐"
+    echo -e " │    1   Add a rule                   2   Remove a rule       │"
+    echo -e " │    3   Configure settings           4   Disable a rule      │"
+    echo -e " │    5   Edit keydindings             6   Edit .profile       │"    
+    echo -e " │    7   Edit autostart               8   Edit bspwmrc        │"
+    echo -e " └─────────────────────────────────────────────────────────────┘"
+    echo -e "          Select an item       -       0   Exit "
+    echo ""
+    read -s -n1 choix
+    case $choix in
+        1)
+            echo
+            add_rule
+            echo ""
+            ;;
+        2)
+            echo
+            rm_rule
+            echo ""
+            ;;
+        3)
+            echo
+            bspwm_cfg
+            echo ""
+            ;;
+        4)
+            echo
+            disable_rule
+            echo ""
+            ;;
+        5)
+            echo
+            $EDITOR $HOME/.config/sxhkd/sxhkdrc
+            echo ""
+            ;;
+        6)
+            echo
+            $EDITOR $HOME/.profile
+            echo ""
+            ;;
+        7)
+            echo
+            $EDITOR $HOME/.config/bspwm/autostart
+            echo ""
+            ;;
+        8)
+            echo
+            $EDITOR $HOME/.config/bspwm/bspwmrc
+            echo ""
+            ;;
+        0)
+            clear && exit
+            read
+            ;;
+        *)
+            echo -e "$RED Wrong option $NC"
+            echo "Wait and try again later..."
+            echo ""
+            sleep 1
+            clear
+            ;;
+    esac
+    done
+}
+
+main

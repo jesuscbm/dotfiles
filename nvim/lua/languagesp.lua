@@ -1,5 +1,5 @@
 local vim = vim
-
+--[[
 require('java').setup({
     root_markers = {
         'settings.gradle',
@@ -14,6 +14,7 @@ require('java').setup({
     },
     cmd = { 'java' },
 })
+--]]
 
 --  This function gets run when an LSP attaches to a particular buffer.
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -176,7 +177,6 @@ local servers = {
             },
         },
     },
-    -- java_language_server = {},
 }
 
 local ensure_installed = vim.tbl_keys(servers or {})
@@ -197,6 +197,7 @@ require("mason-lspconfig").setup({
     automatic_installation = true,
 })
 
+--[[
 require('lspconfig').jdtls.setup({
     settings = {
         java = {
@@ -220,6 +221,7 @@ require('lspconfig').jdtls.setup({
         end,
     },
 })
+--]]
 
 require 'typst-preview'.setup {
   -- Setting this true will enable logging debug information to

@@ -38,6 +38,10 @@ return {
 		},
 	},
 	{
+		'norcalli/nvim-colorizer.lua',
+		keys = { { "<leader>co", "<cmd>ColorizerToggle<cr>", desc = "[CO]lorizer toggle" } },
+	},
+	{
 		'riodelphino/cheat.nvim',
 		opts = {
 			debug = false,   -- show debug msg (only for me)

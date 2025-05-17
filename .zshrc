@@ -1,119 +1,41 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Zinit installer
+if [[ ! -f ~/.zinit/bin/zinit.zsh ]]; then
+  mkdir -p ~/.zinit
+  git clone https://github.com/zdharma-continuum/zinit ~/.zinit/bin
+fi
 
-# Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+source ~/.zinit/bin/zinit.zsh
+autoload -Uz compinit
+compinit -D
+# Plugins
+# zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zdharma-continuum/zinit-annex-patch-dl
+zinit light zdharma-continuum/zinit-annex-bin-gem-node
+zinit light Aloxaf/fzf-tab
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# plugins=(
-#     zsh-autosuggestions
-#     git
-#     extract 
-#     web-search 
-#     yum 
-#     git-extras 
-#     docker 
-#     vagrant
-# )
-#
-# source $ZSH/oh-my-zsh.sh
-#
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_ALL_DUPS
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+export EDITOR='nvim'
 
-# Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-autoload -U colors && colors
-
+# autoload -U colors && colors
 
 # Command prompt
 precmd() {
@@ -123,7 +45,7 @@ precmd() {
 
     PS1_NAME=$(if [[ $COLUMNS -ge 60 && $PWD_LENGTH -lt $(($COLUMNS - 38)) ]] then printf "%%F{087}%%n@%%M%%f:%%F{082}%%~%%f"; elif [[ $COLUMNS -lt 60 && $PWD_LENGTH -lt $COLUMNS ]]  then printf "%%F{082}%%~%%f" ;elif [[ $COLUMNS -ge 60 && $PWD_LENGTH -ge $(($COLUMNS - 38)) ]]; then printf "%%F{087}%%n@%%M%%f:%%F{082}%s%%f" $SHORT_PWD; else printf "%%F{082}%s%%f" $SHORT_PWD; fi)
 
-    PS1_BRANCH=$(if git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [[ $COLUMNS -ge 60 ]]; then printf "──[%%F{013}%s%%f]" $(git branch --show-current); elif [ $COLUMNS -ge 60 ]; then echo "──[%F{013}%T%f]"; fi)
+    PS1_BRANCH=$(if [ -n "$VIRTUAL_ENV" ]; then printf "──[%%F{013}%s%%f]" $(basename "$VIRTUAL_ENV"); elif git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [[ $COLUMNS -ge 60 ]]; then printf "──[%%F{013}%s%%f]" $(git branch --show-current); elif [ $COLUMNS -ge 60 ]; then echo "──[%F{013}%T%f]"; fi)
 
     PS1_STATUS=$(if [[ $EXIT_STT -eq 0 ]]; then echo "%F{087}"; else echo "%F{009}"; fi)
     NEWLINE=$'\n'
@@ -149,10 +71,10 @@ setopt PROMPT_SUBST
 setopt TRANSIENT_RPROMPT
 
 # Alias
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ls='ls --color=auto'
+alias ll='lsd -l'
+alias la='lsd -a'
+alias l='lsd'
+alias ls='lsd'
 alias tonto='echo no hablas de nacho, eso esta claro'
 alias givemeass='objdump -drwC -Mintel'
 alias nv="nvim"
@@ -172,11 +94,16 @@ alias zotyalbum='zotify --output "new/{artist}/{album}/{track_number}-{artists} 
 alias lf='/home/jesuscbm/.config/lf/lf-kitty'
 alias rt='trash'
 alias rm='echo "Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
+alias changewp='feh --bg-fill -z --recursive Downloads/.wallpapers2/'
 
 # KEYBINDINGS
 bindkey '\e[1;5C' forward-word  # Ctrl + Right Arrow
 bindkey '\e[1;5D' backward-word # Ctrl + Left Arrow
 bindkey '^H' backward-kill-word	# Ctrl + Basckspace
+bindkey "^[[3~" delete-char	# Delete
+bindkey "^[[3;5~" kill-word	# Ctrl + Delete
+
+bindkey -e # emacs mode
 
 #PATH variable
 export PATH=$PATH:~/.custom_commands:/usr/local/texlive/2024/bin/x86_64-linux:~/jdk-23.0.2/bin:~/Documents/apache-maven-3.9.9/bin
@@ -190,14 +117,15 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # COWSAY at start (if wide enough)
-selection=$(echo "apt dragon-and-cow kangaroo pony-smaller turtle bud-frogs duck kiss ren tux bunny elephant koala sheep unipony calvin elephant-in-snake kosh skeleton unipony-smaller cheese eyes luke-koala snowman vader cock flaming-sheep mech-and-cow stegosaurus vader-koala cower fox milk stimpy www daemon ghostbusters moofasa suse default gnu moose three-eyes dragon hellokitty pony turkey" | cut -d " " -f $(($RANDOM % 47 + 1)))
+selection=$(echo "actually alpaca beavis.zen blowfish bong bud-frogs bunny cheese cower cupcake daemon default dragon dragon-and-cow elephant elephant-in-snake eyes flaming-sheep fox ghostbusters head-in hellokitty kiss kitty koala kosh llama luke-koala mech-and-cow meow milk moofasa moose mutilated ren sheep skeleton small stegosaurus stimpy supermilker surgery sus three-eyes turkey turtle tux udder vader vader-koala www" | cut -d " " -f $(($RANDOM % 51 + 1)))
 
 if [[ $COLUMNS -ge 70 ]]; then
-    if [[ $(($RANDOM % 2 )) -eq 1 ]]; then
-	fortune | tr '\n' ' ' | cowsay -f $selection   
-    else
-	fortune | tr '\n' ' ' | cowthink -f $selection   
-    fi
+	#    if [[ $(($RANDOM % 2 )) -eq 1 ]]; then
+	# fortune | tr '\n' ' ' | cowsay -f $selection   
+	#    else
+	# fortune | tr '\n' ' ' | cowthink -f $selection   
+	#    fi
+    neofetch
     echo
 fi
 
@@ -211,3 +139,6 @@ export BROWSER="librewolf"
 
 export JAVA_HOME=/home/jesuscbm/jdk-23.0.2
 export PATH=$JAVA_HOME/bin:$PATH
+
+# Created by `pipx` on 2025-05-17 01:22:11
+export PATH="$PATH:/home/jesus/.local/bin"

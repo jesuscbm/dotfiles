@@ -1,0 +1,69 @@
+#
+# BASICS
+#
+# BASICS: TEXT COLOR
+# white
+set color_win_fg=15		
+
+# BASICS: BACKGROUND COLOR
+set color_win_bg=default
+
+# BASICS: COMMAND LINE
+set color_cmdline_bg=default
+set color_cmdline_fg=default
+# rosey red
+set color_error=161
+# blue
+set color_info=38
+# white
+set color_separator=254
+
+# BASICS: BOTTOM STATUS LINE
+# purple
+set color_statusline_bg=93
+# white
+set color_statusline_fg=15
+
+# BASICS: BOTTOM TITLE LINE
+set color_titleline_bg=93
+set color_titleline_fg=15
+
+# BASICS: TOP TITLE LINE
+set color_win_title_bg=93
+set color_win_title_fg=15
+
+#==============================================================================
+#
+# PLAYING TRACK
+#
+# PLAYNG: UNSELECTED PLAYING
+# bright blue
+set color_win_cur=86
+
+# PLAYING: ACTIVE SELECTION
+set color_win_cur_sel_bg=254
+set color_win_cur_sel_fg=24
+
+# PLAYING: INACTIVE SELECTION
+set color_win_inactive_cur_sel_bg=254
+set color_win_inactive_cur_sel_fg=24
+
+#==============================================================================
+#
+# COLLECTION
+#
+# COLLECTION: ACTIVE SELECTION
+set color_win_sel_bg=254
+set color_win_sel_fg=238
+
+# COLLECTION: INACTIVE SELECTION
+set color_win_inactive_sel_bg=default
+set color_win_inactive_sel_fg=31
+
+#==============================================================================
+#
+# DIRECTORIES
+#
+# DIRECTORIES: DIRECTORY LISTING
+# green
+set color_win_dir=118

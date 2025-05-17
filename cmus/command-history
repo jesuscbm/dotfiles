@@ -1,0 +1,12 @@
+update-cache 
+add ~/Music/
+q
+colorscheme tokyonight
+set status_display_program=~/.config/polybar/src/cmus-notify.sh
+set status_display_program
+set status_display_program=
+colorscheme gray-88
+colorscheme night
+colorscheme 
+colorscheme dracula
+filter 

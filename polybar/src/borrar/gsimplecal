@@ -1,0 +1,4 @@
+if gsimplecal; then
+    pkill gsimplecal
+    exit 0
+fi

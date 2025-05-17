@@ -1,0 +1,56 @@
+! nsxiv colors
+nsxiv.background:   #1e1e2e
+nsxiv.foreground:   #cdd6f4
+
+#define t_bg_floor     #010000
+#define t_bg_dip       #2B2B28
+#define t_background   #32312E
+#define t_bg_bump      #3F3E3B
+#define t_fg_comment   #7F7F83
+#define t_foreground   #A6A7AA
+#define t_fg_highlight #B6B7BB
+#define t_fg_ceiling   #FEFFFF
+
+Xcursor.theme: BreezeX-Black
+
+!Tokyo Night theme
+! general
+*foreground: #a9b1d6
+*background: #1a1b26
+*cursorColor: #a9b1d6
+
+! terminal padding color
+*borderColor: #1a1b26
+
+! black
+*color0: #24283b
+*color8: #414868
+
+! red
+*color1: #f7768e
+*color9: #ff9e64
+
+! green
+*color2: #9ece6a
+*color10: #9ece6a
+
+! yellow
+*color3: #e0af68
+*color11: #e0af68
+
+! blue
+*color4: #7aa2f7
+*color12: #7aa2f7
+
+! magenta
+*color5: #bb9af7
+*color13: #bb9af7
+
+! cyan
+*color6: #7dcfff
+*color14: #7dcfff
+
+! white
+*color7: #c0caf5
+*color15: #c0caf5
+! Tokyo Night theme ends

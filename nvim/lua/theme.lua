@@ -10,13 +10,14 @@ require("nvim-treesitter.configs").setup({
 
 vim.cmd([[ 
 
-colorscheme lucid
+colorscheme tokyonight-night
 highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
 highlight CodeiumSuggestion guifg=#808080 ctermfg=244
 
 hi! Normal ctermbg=NONE guibg=NONE
+hi! NormalNC ctermbg=NONE guibg=NONE
 
 :set completeopt-=preview " For No Previews
 

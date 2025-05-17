@@ -1,4 +1,17 @@
 return {
+{
+    'goolord/alpha-nvim',
+    dependencies = { 'echasnovski/mini.icons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+},
+{
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+},
 	-- Syntax highlighting and icons
 	{
 		"nvim-treesitter/nvim-treesitter",
