@@ -6,7 +6,7 @@ Dotfiles for my Linux setup, using Arch, BSPWM and polybar among other things.
 Meant for my personal use, but feel free to take what you want, most's not mine
 either way.
 
-![Desktop](./images/desktop.png) 
+![Desktop](./images/desktop_windows.png) 
 
 ## Todo list
 - Autofirma
