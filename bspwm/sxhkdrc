@@ -187,4 +187,4 @@ Shift + Print
     scrot -s -e 'mv $f $HOME/Pictures/Screenshots/'
 
 Ctrl + Print
-    ffmpeg -video_size 1366x768 -framerate 30 -f x11grab -i :0.0 ~/Videos/$(date +%s).mp4
+    $HOME/.config/rofi/screenrecord.sh

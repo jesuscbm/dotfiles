@@ -1,3 +1,0 @@
-/home/jesus/.config/polybar/modules.ini:382:; TODO: Controlar cmus desde aquí
-/home/jesus/.config/bspwm/bspwmrc:44:# Launch eww daemon if not running. TODO: Not use eww
-/home/jesus/.config/bspwm/sxhkdrc:169:# TODO: Get notifications from src/Brightness and src/Volume

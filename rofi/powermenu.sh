@@ -1,4 +1,4 @@
-#! /usr/bin/bash
+#!/usr/bin/env bash
 chosen=$(printf "󰐥 Power Off\n Restart\n󰤄 Suspend\n Log out\n Lock" | rofi -dmenu -i -l 5 -p "")
 case "$chosen" in 
 	"󰐥 Power Off") shutdown now;;

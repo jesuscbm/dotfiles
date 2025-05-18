@@ -38,4 +38,8 @@ if args.tickers is None:
 tickers = args.tickers
 
 for ticker in tickers:
-    printTicker(ticker)
+    try:
+        printTicker(ticker)
+    except Exception as e:
+        print(f"%{{F#7dcfff}}%{{F-}}")
+        exit(1)

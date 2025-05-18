@@ -3,31 +3,51 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///home/jesus/Downloads/.wallpaper" added="2025-05-17T18:09:06.733142Z" modified="2025-05-17T18:09:06.733153Z" visited="2025-05-17T18:09:06.733144Z">
+  <bookmark href="file:///home/jesus/dotfiles/media" added="2025-05-18T12:14:38.581157Z" modified="2025-05-18T12:14:38.581168Z" visited="2025-05-18T12:14:38.581159Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <bookmark:applications>
-          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-17T18:09:06.733149Z" count="1"/>
+          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-18T12:14:38.581164Z" count="1"/>
         </bookmark:applications>
         <bookmark:private/>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/jesus/Downloads" added="2025-05-17T18:09:06.733157Z" modified="2025-05-17T18:09:06.733167Z" visited="2025-05-17T18:09:06.733157Z">
+  <bookmark href="file:///home/jesus/Desktop/dotfiles/config/bspwm/rices/emilia/walls" added="2025-05-18T12:14:38.581176Z" modified="2025-05-18T12:14:38.581183Z" visited="2025-05-18T12:14:38.581176Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <bookmark:applications>
-          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-17T18:09:06.733161Z" count="1"/>
+          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-18T12:14:38.581178Z" count="1"/>
         </bookmark:applications>
         <bookmark:private/>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/jesus/Downloads/.wallpapers2" added="2025-05-17T18:09:06.733172Z" modified="2025-05-17T18:09:06.733181Z" visited="2025-05-17T18:09:06.733173Z">
+  <bookmark href="file:///home/jesus/Downloads/.wallpaper" added="2025-05-18T12:14:38.581186Z" modified="2025-05-18T12:14:38.581191Z" visited="2025-05-18T12:14:38.581186Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <bookmark:applications>
-          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-17T18:09:06.733175Z" count="1"/>
+          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-18T12:14:38.581190Z" count="1"/>
+        </bookmark:applications>
+        <bookmark:private/>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/jesus/Downloads" added="2025-05-18T12:14:38.581193Z" modified="2025-05-18T12:14:38.581222Z" visited="2025-05-18T12:14:38.581194Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-18T12:14:38.581195Z" count="1"/>
+        </bookmark:applications>
+        <bookmark:private/>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/jesus/Downloads/.wallpapers2" added="2025-05-18T12:14:38.581261Z" modified="2025-05-18T12:14:38.581265Z" visited="2025-05-18T12:14:38.581261Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <bookmark:applications>
+          <bookmark:application name="gThumb" exec="&apos;org.gnome.gThumb %u&apos;" modified="2025-05-18T12:14:38.581263Z" count="1"/>
         </bookmark:applications>
         <bookmark:private/>
       </metadata>
