@@ -15,6 +15,7 @@ chaotic-mirrorlist
 cmatrix
 cmus
 cowsay
+discord
 dmenu
 dosfstools
 dunst
@@ -95,6 +96,7 @@ xarchiver
 xclip
 xdg-desktop-portal
 xdg-utils
+xdotool
 xf86-video-vesa
 xorg-bdftopcf
 xorg-docs

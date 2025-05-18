@@ -9,11 +9,12 @@ either way.
 ![Desktop](./images/desktop_windows.png) 
 
 ## Todo list
+
 - Autofirma
-- KeePassXC - IMPORTANT TO RECOVER THE DATABASE
-- Latex, mirar forma más ligera de instalarlo y usarlo con Pandoc (tectonic?)
+- KeePassXC
 - Ranger
 - Typst
+- Latex (tectonic?)
 - Screen record
 
 ## Credits
