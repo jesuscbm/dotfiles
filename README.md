@@ -8,7 +8,9 @@ either way.
 
 ![Desktop](./media/desktop_windows.png) 
 
-![Small demo](./media/demo.mp4) 
+https://github.com/user-attachments/assets/df917a28-cdeb-4751-a0b0-b37b7fd342cd
+
+
 
 ## Things done
 
