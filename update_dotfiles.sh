@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DOTFILES="$HOME/.zshrc $HOME/.bashrc $HOME/.clang-format $HOME/.gitconfig $HOME/.Xresources $HOME/.gtkrc-2.0"
-DOTDIRS="$HOME/.custom_commands $HOME/.config/zotify $HOME/.config/nvim $HOME/.config/kitty $HOME/.config/bspwm $HOME/.config/picom $HOME/.config/polybar $HOME/.config/dunst $HOME/.config/cmus $HOME/.config/gsimplecal $HOME/.config/lsd $HOME/.config/btop $HOME/.config/ranger $HOME/.config/rofi $HOME/.config/gtk-2.0 $HOME/.config/gtk-3.0 $HOME/.config/gtk-4.0 $HOME/.config/gthumb $HOME/.config/transmission"
+DOTDIRS="$HOME/.custom_commands $HOME/.config/zotify $HOME/.config/nvim $HOME/.config/kitty $HOME/.config/bspwm $HOME/.config/picom $HOME/.config/polybar $HOME/.config/dunst $HOME/.config/cmus $HOME/.config/gsimplecal $HOME/.config/lsd $HOME/.config/btop $HOME/.config/ranger $HOME/.config/rofi $HOME/.config/gtk-2.0 $HOME/.config/gtk-3.0 $HOME/.config/gtk-4.0 $HOME/.config/gthumb $HOME/.config/transmission $HOME/.config/neofetch"
 
 for i in $DOTFILES; do
 	echo "Copying $(basename $i) file"
