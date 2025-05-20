@@ -1,17 +1,10 @@
 return {
-{
-    'goolord/alpha-nvim',
-    dependencies = { 'echasnovski/mini.icons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
-},
-{
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
-},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+	},
 	-- Syntax highlighting and icons
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -67,4 +60,11 @@ return {
 	},
 	{ "nanozuki/tabby.nvim" },
 	{ "romainl/vim-cool" }, -- Highlight search matches
+	{
+		"startup-nvim/startup.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "nvim-telescope/telescope-file-browser.nvim" },
+		config = function()
+			require "startup".setup(require"startup-config")
+		end
+	},
 }

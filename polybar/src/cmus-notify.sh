@@ -61,12 +61,13 @@ fi
 
 notify-send -a "cmus" -r 777 -i "$image" "$title" "$text"
 
-# status: paused
-# file: /home/jesus/Music/Zotify Albums/alt-J/An Awesome Wave (Deluxe Version)/04-alt-J - Breezeblocks.ogg
-# artist: alt-J
-# albumartist: alt-J
-# album: An Awesome Wave (Deluxe Version)
-# tracknumber: 4
-# title: Breezeblocks
-# date: 2012
-# duration: 227
+#### KEYS ####
+# status: 
+# file: 
+# artist: 
+# albumartist:
+# album: 
+# tracknumber: 
+# title: 
+# date:
+# duration: 

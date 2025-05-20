@@ -12,6 +12,7 @@ nsxiv.foreground:   #cdd6f4
 #define t_fg_ceiling   #FEFFFF
 
 Xcursor.theme: BreezeX-Black
+Xcursor.size: 18
 
 !Tokyo Night theme
 ! general

@@ -4,7 +4,9 @@ if [[ ! -f ~/.zinit/bin/zinit.zsh ]]; then
   git clone https://github.com/zdharma-continuum/zinit ~/.zinit/bin
 fi
 
+source ~/.lscolors
 source ~/.zinit/bin/zinit.zsh
+
 autoload -Uz compinit
 compinit -D
 # Plugins
@@ -71,10 +73,10 @@ setopt PROMPT_SUBST
 setopt TRANSIENT_RPROMPT
 
 # Alias
-alias ll='lsd -l'
-alias la='lsd -a'
-alias l='lsd'
-alias ls='lsd'
+alias ll='exa -l'
+alias la='exa -a'
+alias l='exa'
+alias ls='exa'
 alias tonto='echo no hablas de nacho, eso esta claro'
 alias givemeass='objdump -drwC -Mintel'
 alias nv="nvim"

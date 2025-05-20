@@ -36,7 +36,7 @@ super + shift + r
 
 # quit bspwm normally
 super + x
-    rofi_run -l
+    ~/.config/rofi/powermenu.sh
 
 # Send the window to another edge of the screen
 super + {_,shift + }{Left,Down,Up,Right}
@@ -177,14 +177,13 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     $HOME/.config/polybar/src/Brightness down
 
-# TODO: Copy to clipboard
 # screenshot 
 Print 
-    scrot -e 'mv $f $HOME/Pictures/Screenshots/'
+    $HOME/.custom_commands/screenshot
 
-# screenshot region
-Shift + Print
-    scrot -s -e 'mv $f $HOME/Pictures/Screenshots/'
+# screenshot focused window
+shift + Print
+    $HOME/.custom_commands/screenshot -s
 
-Ctrl + Print
-    $HOME/.config/rofi/screenrecord.sh
+ctrl + Print
+    ~/.config/rofi/screenrecord.sh

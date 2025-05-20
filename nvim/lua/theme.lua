@@ -18,6 +18,8 @@ highlight CodeiumSuggestion guifg=#808080 ctermfg=244
 
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NormalNC ctermbg=NONE guibg=NONE
+hi! Comment guifg=#737aa2
+hi! TabLineFill guibg=NONE ctermbg=NONE
 
 :set completeopt-=preview " For No Previews
 

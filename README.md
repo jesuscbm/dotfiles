@@ -30,10 +30,11 @@ https://github.com/user-attachments/assets/df917a28-cdeb-4751-a0b0-b37b7fd342cd
 ## Todo list
 
 - Autofirma
+- Improve recorder plugin (screenshots and all that)
 - KeePassXC
+- Latex (tectonic?)
 - Ranger
 - Typst
-- Latex (tectonic?)
 
 ## Credits
 

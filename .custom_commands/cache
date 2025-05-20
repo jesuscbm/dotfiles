@@ -1,0 +1,7 @@
+paccache -c /home/$(whoami)/.cache/yay/*/ -dvk2
+# paccache -cachedir /home/$(whoami)/.cache/yay/*/ --dryrun --verbose --keep 2
+paccache -c /home/$(whoami)/.cache/yay/*/ -dvuk1
+# paccache -c /home/$(whoami)/.cache/yay/*/  --dryrun --verbose --uninstalled --keep 1
+/usr/bin/paccache -qruk1
+/usr/bin/paccache -qrk2
+

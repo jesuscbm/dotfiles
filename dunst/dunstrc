@@ -76,12 +76,12 @@ title = Dunst
 class = Dunst
 
 [urgency_low]
-timeout = 1
+timeout = 2
 background = "#1a1b26"
 foreground = "#9ece6a"
 
 [urgency_normal]
-timeout = 2
+timeout = 4
 background = "#1a1b26"
 foreground = "#c0caf5"
 

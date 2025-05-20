@@ -1,3 +1,6 @@
+pl-create vimexitos
+pl-create
+add Music/Zotify Albums/Elvis Presley/Blue Hawaii/Disc 1/05. Elvis Presley - Can't Help Falling in Love.ogg
 update-cache 
 add ~/Music/
 q

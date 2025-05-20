@@ -15,7 +15,6 @@ chaotic-mirrorlist
 cmatrix
 cmus
 cowsay
-discord
 dmenu
 dosfstools
 dunst
@@ -47,7 +46,6 @@ lightdm-gtk-greeter
 lightdm-gtk-greeter-settings
 linux
 linux-firmware
-lsd
 lxappearance
 materia-gtk-theme
 mpv
@@ -60,6 +58,7 @@ nsxiv
 ntfs-3g
 nwg-look
 os-prober
+pacman-contrib
 pamixer
 paru
 pavucontrol
@@ -71,6 +70,7 @@ polybar
 powerline-fonts
 python-dbus
 python-pip
+python-pipx
 ranger
 reflector
 rofi
@@ -78,9 +78,11 @@ rsync
 scrot
 simple-mtpfs
 sof-firmware
+spotify
 sxhkd
 thunar
 thunar-archive-plugin
+tldr
 tokyonight-gtk-theme-git
 transmission-gtk3
 ttf-firacode-nerd
@@ -91,6 +93,7 @@ tumbler
 unrar
 vim
 vimix-gtk-themes
+vivid
 woeusb
 xarchiver
 xclip

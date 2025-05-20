@@ -1,4 +1,3 @@
-/home/jesus/Music/Zotify Albums/alt-J/An Awesome Wave/02-alt-J - Interlude I (The Ripe & Ruin).ogg
 /home/jesus/Music/Zotify Albums/alt-J/An Awesome Wave/01-alt-J - Intro.ogg
 /home/jesus/Music/Zotify Albums/alt-J/An Awesome Wave (Deluxe Version)/01-alt-J - Intro.ogg
 /home/jesus/Music/Zotify Albums/alt-J/An Awesome Wave (Deluxe Version)/02-alt-J - Interlude I (The Ripe & Ruin).ogg
@@ -163,6 +162,7 @@
 /home/jesus/Music/Zotify Albums/Caravan Palace/Chronologic/09-Caravan Palace - Supersonics.ogg
 /home/jesus/Music/Zotify Albums/Caravan Palace/Chronologic/10-Caravan Palace - Ghosts.ogg
 /home/jesus/Music/Zotify Albums/Caravan Palace/Chronologic/11-Caravan Palace - April.ogg
+/home/jesus/Music/Zotify Albums/Elvis Presley/Blue Hawaii/Disc 1/05. Elvis Presley - Can't Help Falling in Love.ogg
 /home/jesus/Music/Zotify Albums/glass beach/the first glass beach album/01-glass beach - classic j dies and goes to hell part 1.ogg
 /home/jesus/Music/Zotify Albums/glass beach/the first glass beach album/02-glass beach - bedroom community.ogg
 /home/jesus/Music/Zotify Albums/glass beach/the first glass beach album/03-glass beach - (forever_________).ogg
