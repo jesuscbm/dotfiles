@@ -127,7 +127,7 @@ if [[ $COLUMNS -ge 70 ]]; then
 	#    else
 	# fortune | tr '\n' ' ' | cowthink -f $selection   
 	#    fi
-    neofetch
+    fastfetch
     echo
 fi
 

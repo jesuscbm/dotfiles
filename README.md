@@ -23,13 +23,14 @@ https://github.com/user-attachments/assets/ce0bcdd2-93fa-4dae-ba3e-f7b1be6cbdcb
 - Battery notifications
 - Cmus notifications
 - Nvim configuration
-- Screen recording (not a lot of capabilities yet)
+- Screen recording
 - Keybinds (mostly)
+- Window rofi menus
+- Neofetch and Fastfetch
 
 ## Todo list
 
 - Autofirma
-- Improve recorder plugin (screenshots and all that)
 - KeePassXC
 - Latex (tectonic?)
 - Ranger

@@ -21,6 +21,7 @@ dunst
 efibootmgr
 eww-git
 eza
+fastfetch
 feh
 fortune-mod
 fzf-tab-git
