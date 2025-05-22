@@ -1,6 +1,6 @@
 # web browser
 super + w
-    librewolf
+    zen-browser
 
 # terminal emulator
 super + Return

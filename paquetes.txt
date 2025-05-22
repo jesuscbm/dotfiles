@@ -152,5 +152,6 @@ xwinwrap-0.9-bin
 yarn
 yay
 yay-debug
+zen-browser-bin
 zoxide
 zsh

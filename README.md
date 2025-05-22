@@ -35,6 +35,8 @@ https://github.com/user-attachments/assets/ce0bcdd2-93fa-4dae-ba3e-f7b1be6cbdcb
 - Latex (tectonic?)
 - Ranger
 - Typst
+- Wallpapers
+- Terminal prompt
 
 ## Credits
 

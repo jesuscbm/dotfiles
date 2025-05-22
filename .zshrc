@@ -42,28 +42,38 @@ export EDITOR='nvim'
 # Command prompt
 precmd() {
     EXIT_STT=$?
-    PWD_LENGTH=$((${#PWD}-8))
+    PWD_LENGTH=$((${#PWD}-12))
     SHORT_PWD=$(pwd | tr '/' ' ' | awk '{printf(".../%s/%s", $(NF-1), $(NF))}')
 
-    PS1_NAME=$(if [[ $COLUMNS -ge 60 && $PWD_LENGTH -lt $(($COLUMNS - 38)) ]] then printf "%%F{087}%%n@%%M%%f:%%F{082}%%~%%f"; elif [[ $COLUMNS -lt 60 && $PWD_LENGTH -lt $COLUMNS ]]  then printf "%%F{082}%%~%%f" ;elif [[ $COLUMNS -ge 60 && $PWD_LENGTH -ge $(($COLUMNS - 38)) ]]; then printf "%%F{087}%%n@%%M%%f:%%F{082}%s%%f" $SHORT_PWD; else printf "%%F{082}%s%%f" $SHORT_PWD; fi)
+    FIRSTBGCOLOR=127
+    FIRSTFGCOLOR=15
+    SECONDBGCOLOR=164
+    SECONDFGCOLOR=15
+    THIRDBGCOLOR=134
+    THIRDFGCOLOR=15
+    ERRORCOLOR=red
+    OKCOLOR=cyan
 
-    PS1_BRANCH=$(if [ -n "$VIRTUAL_ENV" ]; then printf "──[%%F{013}%s%%f]" $(basename "$VIRTUAL_ENV"); elif git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [[ $COLUMNS -ge 60 ]]; then printf "──[%%F{013}%s%%f]" $(git branch --show-current); elif [ $COLUMNS -ge 60 ]; then echo "──[%F{013}%T%f]"; fi)
+    PS1_NAME=$(if [[ $COLUMNS -ge 60 && $PWD_LENGTH -lt $(($COLUMNS - 38)) ]] then printf "%%F{$FIRSTBGCOLOR}%%f%%K{$FIRSTBGCOLOR}%%F{$FIRSTFGCOLOR} %%n %%f%%F{$FIRSTBGCOLOR}%%K{$SECONDBGCOLOR}%%f%%k%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %%~ %%f%%k"; elif [[ $COLUMNS -lt 60 && $PWD_LENGTH -lt $COLUMNS ]]  then printf "%%F{$SECONDBGCOLOR}%%f%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %%~ %%f%%k" ;elif [[ $COLUMNS -ge 60 && $PWD_LENGTH -ge $(($COLUMNS - 38)) ]]; then printf "%%F{$FIRSTBGCOLOR}%%f%%K{$FIRSTBGCOLOR}%%F{$FIRSTFGCOLOR} %%n %%f:%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR}%s%%f%%k" $SHORT_PWD; else printf "%%F{$SECONDBGCOLOR}%%f%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %s%%f%%k" $SHORT_PWD; fi)
 
-    PS1_STATUS=$(if [[ $EXIT_STT -eq 0 ]]; then echo "%F{087}"; else echo "%F{009}"; fi)
+    PS1_BRANCH=$(if [ -n "$VIRTUAL_ENV" ]; then printf "󰌠 %s" $(basename "$VIRTUAL_ENV"); elif git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [[ $COLUMNS -ge 60 ]]; then printf " %s" $(git branch --show-current); elif [ $COLUMNS -ge 60 ]; then echo "󰥔 %T"; fi)
+
+    PS1_STATUS=$(if [[ $EXIT_STT -eq 0 ]]; then echo "%F{$OKCOLOR} 󰣇 %f"; else echo "%F{$ERRORCOLOR} 󰣇 %f"; fi)
     NEWLINE=$'\n'
 
-    PROMPT=${debian_chroot:+($debian_chroot)}%F{015}┌──[%f$PS1_NAME%F{015}]%f$PS1_BRANCH$NEWLINE╰─$PS1_STATUS\$\ %f 
+    PROMPT=${debian_chroot:+($debian_chroot)}$PS1_NAME%F{015}%F{$SECONDBGCOLOR}%K{$THIRDBGCOLOR}%f%F{$THIRDFGCOLOR}$PS1_BRANCH%f%k%F{$THIRDBGCOLOR}%f$NEWLINE$PS1_STATUS%F{cyan}󰅂%f\ 
 
-    # JOBS=$(if [[ $(jobs | wc -l) -gt 0 ]]; then printf "%%F{158}Jobs %%j%%f "; fi)
     JOBS="%F{117}Jobs: %j %f"
 
     BATLEVEL=$(cat /sys/class/power_supply/BAT1/capacity)
-    if [ "$BATLEVEL" -ge 50 ]; then
-	# Green to Yellow (154 to 190)
-	BATCOLOR=$((154 + (190 - 154) * (100 - $BATLEVEL) / 50))
+    if [ "$BATLEVEL" -ge 60 ]; then
+	BATCOLOR=cyan
+    elif [ "$BATLEVEL" -ge 40 ]; then
+	BATCOLOR=green
+    elif [ "$BATLEVEL" -ge 20 ]; then
+	BATCOLOR=yellow
     else
-	# Yellow to Red (190 to 196)
-	BATCOLOR=$((190 + (196 - 190) * (50 - $BATLEVEL) / 50))
+	BATCOLOR=red
     fi
     BATTERY=%F{$BATCOLOR}Battery:\ $BATLEVEL%%%f 
 
