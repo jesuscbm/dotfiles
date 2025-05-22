@@ -10,6 +10,8 @@ either way.
 
 ![Btop and some windows](./media/btop.png)
 
+https://github.com/user-attachments/assets/8e5d4982-5b4d-473e-aa48-b6b7157dc668
+
 ## Things done
 
 - Modules for polybar:
