@@ -8,8 +8,7 @@ either way.
 
 ![Desktop](./media/desktop_windows.png) 
 
-https://github.com/user-attachments/assets/ce0bcdd2-93fa-4dae-ba3e-f7b1be6cbdcb
-
+![Btop and some windows](./media/btop.png)
 
 ## Things done
 
