@@ -14,44 +14,69 @@ nsxiv.foreground:   #cdd6f4
 Xcursor.theme: BreezeX-Black
 Xcursor.size: 18
 
-!Tokyo Night theme
-! general
-*foreground: #a9b1d6
+! TokyoNight colors for Xresources
+
 *background: #1a1b26
-*cursorColor: #a9b1d6
+*foreground: #c0caf5
 
-! terminal padding color
-*borderColor: #1a1b26
-
-! black
-*color0: #24283b
-*color8: #414868
-
-! red
+*color0: #15161e
 *color1: #f7768e
-*color9: #ff9e64
-
-! green
 *color2: #9ece6a
-*color10: #9ece6a
-
-! yellow
 *color3: #e0af68
-*color11: #e0af68
-
-! blue
 *color4: #7aa2f7
-*color12: #7aa2f7
-
-! magenta
 *color5: #bb9af7
-*color13: #bb9af7
-
-! cyan
 *color6: #7dcfff
-*color14: #7dcfff
-
-! white
 *color7: #c0caf5
-*color15: #c0caf5
-! Tokyo Night theme ends
+
+*color8: #414868
+*color9: #f7768e
+*color10: #9ece6a
+*color11: #e0af68
+*color12: #7aa2f7
+*color13: #bb9af7
+*color14: #7dcfff
+*color15: #e0eaf5
+ 
+
+
+! !Tokyo Night theme
+! ! general
+! *foreground: #a9b1d6
+! *background: #1a1b26
+! *cursorColor: #a9b1d6
+!
+! ! terminal padding color
+! *borderColor: #1a1b26
+!
+! ! black
+! *color0: #24283b
+! *color8: #414868
+!
+! ! red
+! *color1: #f7768e
+! *color9: #ff9e64
+!
+! ! green
+! *color2: #9ece6a
+! *color10: #9ece6a
+!
+! ! yellow
+! *color3: #e0af68
+! *color11: #e0af68
+!
+! ! blue
+! *color4: #7aa2f7
+! *color12: #7aa2f7
+!
+! ! magenta
+! *color5: #bb9af7
+! *color13: #bb9af7
+!
+! ! cyan
+! *color6: #7dcfff
+! *color14: #7dcfff
+!
+! ! white
+! *color7: #c0caf5
+! *color15: #c0caf5
+! ! Tokyo Night theme ends

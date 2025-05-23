@@ -75,6 +75,12 @@ super + g
 super + s
         bspc node -t \~floating
 
+# Rotate
+super + r
+        bspc node @parent -R 90
+super + shift + r
+        bspc node @parent -R 180
+
 # Toggle sticky
 super + shift + s
     bspc node -g sticky

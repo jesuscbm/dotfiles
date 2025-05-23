@@ -54,7 +54,7 @@ precmd() {
     ERRORCOLOR=red
     OKCOLOR=cyan
 
-    PS1_NAME=$(if [[ $COLUMNS -ge 60 && $PWD_LENGTH -lt $(($COLUMNS - 38)) ]] then printf "%%F{$FIRSTBGCOLOR}%%f%%K{$FIRSTBGCOLOR}%%F{$FIRSTFGCOLOR} %%n %%f%%F{$FIRSTBGCOLOR}%%K{$SECONDBGCOLOR}%%f%%k%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %%~ %%f%%k"; elif [[ $COLUMNS -lt 60 && $PWD_LENGTH -lt $COLUMNS ]]  then printf "%%F{$SECONDBGCOLOR}%%f%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %%~ %%f%%k" ;elif [[ $COLUMNS -ge 60 && $PWD_LENGTH -ge $(($COLUMNS - 38)) ]]; then printf "%%F{$FIRSTBGCOLOR}%%f%%K{$FIRSTBGCOLOR}%%F{$FIRSTFGCOLOR} %%n %%f:%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR}%s%%f%%k" $SHORT_PWD; else printf "%%F{$SECONDBGCOLOR}%%f%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %s%%f%%k" $SHORT_PWD; fi)
+    PS1_NAME=$(if [[ $COLUMNS -ge 60 && $PWD_LENGTH -lt $(($COLUMNS - 38)) ]] then printf "%%F{$FIRSTBGCOLOR}%%f%%K{$FIRSTBGCOLOR}%%F{$FIRSTFGCOLOR} %%n %%f%%F{$FIRSTBGCOLOR}%%K{$SECONDBGCOLOR}%%f%%k%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %%~ %%f%%k"; elif [[ $COLUMNS -lt 60 && $PWD_LENGTH -lt $COLUMNS ]]  then printf "%%F{$SECONDBGCOLOR}%%f%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %%~ %%f%%k" ;elif [[ $COLUMNS -ge 60 && $PWD_LENGTH -ge $(($COLUMNS - 38)) ]]; then printf "%%F{$FIRSTBGCOLOR}%%f%%K{$FIRSTBGCOLOR}%%F{$FIRSTFGCOLOR} %%n %%f%%F{$FIRSTBGCOLOR}%%K{$SECONDBGCOLOR}%%f%%k%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %s %%f%%k" $SHORT_PWD; else printf "%%F{$SECONDBGCOLOR}%%f%%K{$SECONDBGCOLOR}%%F{$SECONDFGCOLOR} %s%%f%%k" $SHORT_PWD; fi)
 
     PS1_BRANCH=$(if [ -n "$VIRTUAL_ENV" ]; then printf "󰌠 %s" $(basename "$VIRTUAL_ENV"); elif git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [[ $COLUMNS -ge 60 ]]; then printf " %s" $(git branch --show-current); elif [ $COLUMNS -ge 60 ]; then echo "󰥔 %T"; fi)
 
@@ -82,7 +82,13 @@ precmd() {
 setopt PROMPT_SUBST
 setopt TRANSIENT_RPROMPT
 
+lfcd () {
+    # `command` is needed in case `lfcd` is aliased to `lf`
+    cd "$(command lf -print-last-dir "$@")"
+}
 # Alias
+
+alias lf='lfcd'
 alias ll='exa -l'
 alias la='exa -a'
 alias l='exa'
@@ -103,7 +109,6 @@ alias diffk="kitty +kitten diff"
 alias myip="curl http://ipecho.net/plain; echo"
 alias danisay="fortune | tr '\\n' ' ' | xargs -I{} -0 dsay \"{}\""
 alias zotyalbum='zotify --output "new/{artist}/{album}/{track_number}-{artists} - {song_name}"'
-alias lf='/home/jesuscbm/.config/lf/lf-kitty'
 alias rt='trash'
 alias rm='echo "Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
 alias changewp='feh --bg-fill -z --recursive Downloads/.wallpapers2/'
@@ -118,7 +123,7 @@ bindkey "^[[3;5~" kill-word	# Ctrl + Delete
 bindkey -e # emacs mode
 
 #PATH variable
-export PATH=$PATH:~/.custom_commands:/usr/local/texlive/2024/bin/x86_64-linux:~/jdk-23.0.2/bin:~/Documents/apache-maven-3.9.9/bin
+export PATH=$PATH:~/.custom_commands
 
 # PLUGIN config
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
@@ -149,8 +154,8 @@ export EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="librewolf"
 
-export JAVA_HOME=/home/jesuscbm/jdk-23.0.2
-export PATH=$JAVA_HOME/bin:$PATH
+# export JAVA_HOME=/home/jesus/jdk-23.0.2
+# export PATH=$JAVA_HOME/bin:$PATH
 
 # Created by `pipx` on 2025-05-17 01:22:11
 export PATH="$PATH:/home/jesus/.local/bin"

@@ -1,6 +1,7 @@
 7zip
 base
 base-devel
+bat
 betterlockscreen
 blueman
 bluez-tools
@@ -10,6 +11,7 @@ bsd-games
 bspwm
 btop
 cava
+chafa
 chaotic-keyring
 chaotic-mirrorlist
 cmatrix
@@ -40,11 +42,13 @@ gvfs-mtp
 htop
 i3lock-color
 imagemagick
+jre21-openjdk
 kitty
-librewolf-bin
+lesspipe
+lf
 lightdm
-lightdm-gtk-greeter
-lightdm-gtk-greeter-settings
+lightdm-webkit-theme-litarvan
+lightdm-webkit2-greeter
 linux
 linux-firmware
 lxappearance
@@ -69,10 +73,11 @@ pipewire-alsa
 pipewire-pulse
 polybar
 powerline-fonts
+powertop
 python-dbus
+python-pillow
 python-pip
 python-pipx
-ranger
 reflector
 rofi
 rsync
@@ -81,9 +86,12 @@ simple-mtpfs
 sof-firmware
 spotify
 sxhkd
+tectonic
 thunar
 thunar-archive-plugin
 tldr
+tlp
+tlp-rdw
 tokyonight-gtk-theme-git
 transmission-gtk3
 ttf-firacode-nerd
@@ -91,6 +99,8 @@ ttf-font-awesome
 ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 tumbler
+typst
+ufw
 unrar
 vim
 vimix-gtk-themes

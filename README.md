@@ -28,16 +28,15 @@ https://github.com/user-attachments/assets/8e5d4982-5b4d-473e-aa48-b6b7157dc668
 - Keybinds (mostly)
 - Window rofi menus
 - Neofetch and Fastfetch
+- Zshrc and cool prompt
 
 ## Todo list
 
-- Autofirma
 - KeePassXC
 - Latex (tectonic?)
 - Ranger
 - Typst
 - Wallpapers
-- Terminal prompt
 
 ## Credits
 
