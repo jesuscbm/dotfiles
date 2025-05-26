@@ -37,6 +37,7 @@ https://github.com/user-attachments/assets/8e5d4982-5b4d-473e-aa48-b6b7157dc668
 - Ranger
 - Typst
 - Wallpapers
+- Dmenu
 
 ## Credits
 

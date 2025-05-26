@@ -38,6 +38,12 @@ super + shift + r
 super + x
     ~/.config/rofi/powermenu.sh
 
+super + m
+    ~/.config/rofi/calculator.sh
+
+super + n
+    ~/.config/rofi/notes.sh
+
 # Send the window to another edge of the screen
 super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}

@@ -20,6 +20,7 @@ cowsay
 dmenu
 dosfstools
 dunst
+dwarffortress
 efibootmgr
 eww-git
 eza
@@ -31,6 +32,7 @@ gh0stzk-icons-tokyo-night
 git
 gparted
 gptfdisk
+graphicsmagick
 grub
 grub-customizer
 gsimplecal
@@ -53,6 +55,7 @@ linux
 linux-firmware
 lxappearance
 materia-gtk-theme
+mpd
 mpv
 neofetch
 neovim
@@ -71,6 +74,7 @@ pcmanfm
 picom
 pipewire-alsa
 pipewire-pulse
+playerctl
 polybar
 powerline-fonts
 powertop
@@ -79,11 +83,15 @@ python-pillow
 python-pip
 python-pipx
 reflector
+rmpc
 rofi
 rsync
 scrot
+sdl2_image
+sdl2_ttf
 simple-mtpfs
 sof-firmware
+spicetify-cli
 spotify
 sxhkd
 tectonic
@@ -100,6 +108,7 @@ ttf-nerd-fonts-symbols
 ttf-nerd-fonts-symbols-mono
 tumbler
 typst
+ueberzug
 ufw
 unrar
 vim

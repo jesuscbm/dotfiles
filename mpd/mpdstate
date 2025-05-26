@@ -1,0 +1,30 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: pause
+current: 2
+time: 1.961
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0
+mixrampdelay: -1
+lastloadedplaylist: 
+playlist_begin
+0:Zotify Albums/TV Girl/French Exit/Disc 1/02. TV Girl - Birds Dont Sing.ogg
+1:Zotify Albums/TV Girl/French Exit/Disc 1/09. TV Girl - Lovers Rock.ogg
+2:Zotify Albums/Miracle Musical/Hawaii_ Part II/01-Miracle Musical - Introduction to the Snow.ogg
+3:Zotify Albums/Miracle Musical/Hawaii_ Part II/02-Miracle Musical - Isle Unto Thyself.ogg
+4:Zotify Albums/Miracle Musical/Hawaii_ Part II/03-Miracle Musical - Black Rainbows.ogg
+5:Zotify Albums/Miracle Musical/Hawaii_ Part II/04-Miracle Musical - White Ball.ogg
+6:Zotify Albums/Miracle Musical/Hawaii_ Part II/05-Miracle Musical - Murders.ogg
+7:Zotify Albums/Miracle Musical/Hawaii_ Part II/06-Miracle Musical - 宇宙ステーションのレベル7.ogg
+8:Zotify Albums/Miracle Musical/Hawaii_ Part II/07-Miracle Musical - The Mind Electric.ogg
+9:Zotify Albums/Miracle Musical/Hawaii_ Part II/08-Miracle Musical, Shane MauX, KAYE - Labyrinth.ogg
+10:Zotify Albums/Miracle Musical/Hawaii_ Part II/09-Miracle Musical - Time Machine.ogg
+11:Zotify Albums/Miracle Musical/Hawaii_ Part II/10-Miracle Musical - Stranded Lullaby.ogg
+12:Zotify Albums/Miracle Musical/Hawaii_ Part II/11-Miracle Musical - Dream Sweet in Sea Major.ogg
+13:Zotify Albums/Miracle Musical/Variations on a Cloud/01-Miracle Musical - Variations on a Cloud.ogg
+playlist_end

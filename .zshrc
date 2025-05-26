@@ -112,6 +112,7 @@ alias zotyalbum='zotify --output "new/{artist}/{album}/{track_number}-{artists} 
 alias rt='trash'
 alias rm='echo "Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
 alias changewp='feh --bg-fill -z --recursive Downloads/.wallpapers2/'
+alias dmenu="dmenu -nb #1a1b26 -nf #c0caf5 -sb #bb9af7 -sf #15161e -i -fn 'FiraCode Nerd Font:size=11'"
 
 # KEYBINDINGS
 bindkey '\e[1;5C' forward-word  # Ctrl + Right Arrow
