@@ -150,10 +150,11 @@ fi
 # ZOXIDE setup
 eval "$(zoxide init zsh)"
 
-# LF setup
+# Enviroment variables
 export EDITOR="nvim"
 export TERMINAL="kitty"
-export BROWSER="librewolf"
+export BROWSER="zen-browser"
+export MANPAGER='nvim +Man!'
 
 # export JAVA_HOME=/home/jesus/jdk-23.0.2
 # export PATH=$JAVA_HOME/bin:$PATH

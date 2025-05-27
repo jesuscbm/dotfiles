@@ -3,8 +3,7 @@
 ## Description
 
 Dotfiles for my Linux setup, using Arch, BSPWM and polybar among other things.
-Meant for my personal use, but feel free to take what you want, most's not mine
-either way.
+Meant for my personal use, but feel free to take what you want.
 
 ![Desktop](./media/desktop_windows.png) 
 
@@ -14,6 +13,8 @@ https://github.com/user-attachments/assets/8e5d4982-5b4d-473e-aa48-b6b7157dc668
 
 ## Things done
 
+- Battery notifications
+- Cmus and RMPC notifications
 - Modules for polybar:
     - Stock tracker
     - Music
@@ -21,23 +22,16 @@ https://github.com/user-attachments/assets/8e5d4982-5b4d-473e-aa48-b6b7157dc668
     - Updates
     - Windows
     - The rest are totally gh0stzk's
-- Battery notifications
-- Cmus notifications
 - Nvim configuration
-- Screen recording
-- Keybinds (mostly)
-- Window rofi menus
-- Neofetch and Fastfetch
+- Rofi menus:
+    - Power menu
+    - Screenshot menu
+    - Windows menu
+    - Notes menu
+    - Quick Calculator
+- Screen recording with ffmpeg
+- Neofetch and Fastfetch configs
 - Zshrc and cool prompt
-
-## Todo list
-
-- KeePassXC
-- Latex (tectonic?)
-- Ranger
-- Typst
-- Wallpapers
-- Dmenu
 
 ## Credits
 

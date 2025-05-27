@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Discord
+GenericName=Online Community
+Comment=IT'S AN ONLINE COMMUNITY WHERE YOU CAN MEET KITTENS
+Icon=discord
+Exec=/home/jesus/Documents/Discord/Discord
+Terminal=false
+Categories=Network;Chat;
+Keywords=discord;online;social
+

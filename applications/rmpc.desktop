@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=RMPC
+GenericName=Music client
+Comment=Music client for MPD
+Icon=music
+Exec=sh -c 'pgrep mpd >/dev/null || mpd; sleep 0.5; kitty --class music-term -e rmpc'
+Terminal=false
+Categories=Media;Music
+Keywords=music;media;mpd

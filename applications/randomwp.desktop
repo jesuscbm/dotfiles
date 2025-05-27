@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Random Wallpaper
+Icon=feh
+Exec=feh --randomize --bg-fill /home/jesus/Downloads/.wallpaper
+Terminal=false
+Categories=Graphics;GTK;Utility;
+Keywords=wallpaper;change;background

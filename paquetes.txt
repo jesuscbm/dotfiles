@@ -1,4 +1,5 @@
 7zip
+arch-wiki-docs
 base
 base-devel
 bat
@@ -94,10 +95,10 @@ sof-firmware
 spicetify-cli
 spotify
 sxhkd
+tealdeer
 tectonic
 thunar
 thunar-archive-plugin
-tldr
 tlp
 tlp-rdw
 tokyonight-gtk-theme-git
@@ -114,6 +115,7 @@ unrar
 vim
 vimix-gtk-themes
 vivid
+wikiman
 woeusb
 xarchiver
 xclip

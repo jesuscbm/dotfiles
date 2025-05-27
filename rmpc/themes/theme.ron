@@ -84,9 +84,9 @@
         rows: [
             (
                 left: [
-                    (kind: Text("["), style: (fg: "green", modifiers: "Bold")),
-                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "green", modifiers: "Bold")),
-                    (kind: Text("]"), style: (fg: "green", modifiers: "Bold"))
+                    (kind: Text("["), style: (fg: "cyan", modifiers: "Bold")),
+                    (kind: Property(Status(StateV2(playing_label: "Playing", paused_label: "Paused", stopped_label: "Stopped"))), style: (fg: "cyan", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "cyan", modifiers: "Bold"))
                 ],
                 center: [
                     (kind: Property(Song(Title)), style: (modifiers: "Bold"),
@@ -107,8 +107,8 @@
                     (kind: Text(" kbps)"))
                 ],
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "green", modifiers: "Bold"),
-                        default: (kind: Text("Unknown"), style: (fg: "green", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "cyan", modifiers: "Bold"),
+                        default: (kind: Text("Unknown"), style: (fg: "cyan", modifiers: "Bold"))
                     ),
                     (kind: Text(" - ")),
                     (kind: Property(Song(Album)),
