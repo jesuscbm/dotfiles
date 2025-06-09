@@ -1,6 +1,6 @@
 # web browser
 super + w
-    zen-browser
+    librewolf
 
 # terminal emulator
 super + Return
@@ -12,7 +12,7 @@ alt + shift + Return
 
 # file manager
 super + shift + f
-   kitty -e ranger
+   kitty -e lf
 super + f
    thunar
 
@@ -114,10 +114,6 @@ super + {_,shift + }{h,j,k,l}
 # focus the node for the given path jump
 super + {p,b,comma,period}
     bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous node in the current desktop
-super + {_,shift + }c
-    bspc node -f {next,prev}.local
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}

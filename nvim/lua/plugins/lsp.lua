@@ -56,7 +56,7 @@ return {
 				typescriptreact = { "prettier" },
 				vue = { "prettier" },
 				svelte = { "prettier" },
-				java = {},
+				-- java = {},
 			},
 		},
 	},

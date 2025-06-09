@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Minecraft
+GenericName=Cube game
+Icon=start
+Exec=quantum_launcher
+Terminal=false
+Keywords=minecraft;launcher

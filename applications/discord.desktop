@@ -10,3 +10,4 @@ Terminal=false
 Categories=Network;Chat;
 Keywords=discord;online;social
 
+MimeType=x-scheme-handler/betterdiscord;

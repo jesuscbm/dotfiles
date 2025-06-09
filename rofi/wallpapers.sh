@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 WPFOLDER=$HOME/Downloads/.wallpaper/
-images=$(find $WPFOLDER -type f)
+images=$(find $WPFOLDER -type f | sort)
 options=""
 
 for i in $images; do

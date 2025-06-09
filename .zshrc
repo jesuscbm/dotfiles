@@ -1,26 +1,32 @@
-# Zinit installer
-if [[ ! -f ~/.zinit/bin/zinit.zsh ]]; then
-  mkdir -p ~/.zinit
-  git clone https://github.com/zdharma-continuum/zinit ~/.zinit/bin
+# zmodload zsh/zprof
+# Clone zcomet if necessary
+if [[ ! -f ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh ]]; then
+  command git clone https://github.com/agkozak/zcomet.git ${ZDOTDIR:-${HOME}}/.zcomet/bin
 fi
+source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 
 source ~/.lscolors
-source ~/.zinit/bin/zinit.zsh
+LSCOLORS=$(vivid generate tokyonight-night)
 
 autoload -Uz compinit
-compinit -D
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+	compinit;
+else
+	compinit -C;
+fi;
+# cmp opts
+zstyle ':completion:*' menu select # tab opens cmp menu
+zstyle ':completion:*' special-dirs true # force . and .. to show in cmp menu
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} ma=0\;33 # colorize cmp menu
+# zstyle ':completion:*' file-list true # more detailed list
+zstyle ':completion:*' squeeze-slashes false # explicit disable to allow /*/ expansion
+
+autoload -U colors && colors
+
 # Plugins
-# zinit light zsh-users/zsh-autosuggestions
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zdharma-continuum/zinit-annex-patch-dl
-zinit light zdharma-continuum/zinit-annex-bin-gem-node
-zinit light Aloxaf/fzf-tab
+zcomet load zsh-users/zsh-syntax-highlighting
+zcomet load Aloxaf/fzf-tab
 zstyle ':completion:*:git-checkout:*' sort false
-# set descriptions format to enable group support
-zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # preview directory's content with exa when completing cd
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'exa -1 --color=always $realpath'
 
@@ -31,6 +37,23 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt INC_APPEND_HISTORY SHARE_HISTORY HIST_IGNORE_ALL_DUPS
+HISTCONTROL=ignoreboth # consecutive duplicates & commands starting with space are not saved
+
+# fzf
+source <(fzf --zsh) # allow for fzf history widget
+
+# main opts
+setopt append_history inc_append_history share_history # better history
+# on exit, history appends rather than overwrites; history is appended as soon as cmds executed; history shared across sessions
+setopt auto_menu menu_complete # autocmp first menu match
+setopt autocd # type a dir to cd
+setopt auto_param_slash # when a dir is completed, add a / instead of a trailing space
+setopt no_case_glob no_case_match # make cmp case insensitive
+setopt globdots # include dotfiles
+setopt extended_glob # match ~ # ^
+setopt interactive_comments # allow comments in shell
+unsetopt prompt_sp # don't autoclean blanklines
+stty stop undef # disable accidental ctrl s
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
@@ -96,6 +119,7 @@ alias ls='exa'
 alias tonto='echo no hablas de nacho, eso esta claro'
 alias givemeass='objdump -drwC -Mintel'
 alias nv="nvim"
+alias v="nvim"
 alias fullgrind='valgrind --leak-check=full -s --track-origins=yes'
 alias pls=sudo
 alias thanks='echo de nada'
@@ -113,8 +137,10 @@ alias rt='trash'
 alias rm='echo "Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
 alias changewp='feh --bg-fill -z --recursive Downloads/.wallpapers2/'
 alias dmenu="dmenu -nb #1a1b26 -nf #c0caf5 -sb #bb9af7 -sf #15161e -i -fn 'FiraCode Nerd Font:size=11'"
+alias c=clear
 
 # KEYBINDINGS
+# zle -al to see all keybindings
 bindkey '\e[1;5C' forward-word  # Ctrl + Right Arrow
 bindkey '\e[1;5D' backward-word # Ctrl + Left Arrow
 bindkey '^H' backward-kill-word	# Ctrl + Basckspace
@@ -129,23 +155,18 @@ export PATH=$PATH:~/.custom_commands
 # PLUGIN config
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
 # COWSAY at start (if wide enough)
-selection=$(echo "actually alpaca beavis.zen blowfish bong bud-frogs bunny cheese cower cupcake daemon default dragon dragon-and-cow elephant elephant-in-snake eyes flaming-sheep fox ghostbusters head-in hellokitty kiss kitty koala kosh llama luke-koala mech-and-cow meow milk moofasa moose mutilated ren sheep skeleton small stegosaurus stimpy supermilker surgery sus three-eyes turkey turtle tux udder vader vader-koala www" | cut -d " " -f $(($RANDOM % 51 + 1)))
-
-if [[ $COLUMNS -ge 70 ]]; then
-	#    if [[ $(($RANDOM % 2 )) -eq 1 ]]; then
-	# fortune | tr '\n' ' ' | cowsay -f $selection   
-	#    else
-	# fortune | tr '\n' ' ' | cowthink -f $selection   
-	#    fi
-    fastfetch
-    echo
-fi
+# selection=$(echo "actually alpaca beavis.zen blowfish bong bud-frogs bunny cheese cower cupcake daemon default dragon dragon-and-cow elephant elephant-in-snake eyes flaming-sheep fox ghostbusters head-in hellokitty kiss kitty koala kosh llama luke-koala mech-and-cow meow milk moofasa moose mutilated ren sheep skeleton small stegosaurus stimpy supermilker surgery sus three-eyes turkey turtle tux udder vader vader-koala www" | cut -d " " -f $(($RANDOM % 51 + 1)))
+#
+# if [[ $COLUMNS -ge 70 ]]; then
+# 	#    if [[ $(($RANDOM % 2 )) -eq 1 ]]; then
+# 	# fortune | tr '\n' ' ' | cowsay -f $selection   
+# 	#    else
+# 	# fortune | tr '\n' ' ' | cowthink -f $selection   
+# 	#    fi
+#     fastfetch
+#     echo
+# fi
 
 # ZOXIDE setup
 eval "$(zoxide init zsh)"
@@ -161,3 +182,9 @@ export MANPAGER='nvim +Man!'
 
 # Created by `pipx` on 2025-05-17 01:22:11
 export PATH="$PATH:/home/jesus/.local/bin"
+
+# pyenv asqueroso
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
+# zprof

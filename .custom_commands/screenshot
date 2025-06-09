@@ -1,6 +1,16 @@
 #!/usr/bin/env bash
 
 IMAGE_OUTPUT_DIR="$HOME/Pictures/Screenshots"
-filename="$IMAGE_OUTPUT_DIR/screenshot_$(date +%s).png"
-scrot $1 $2 $3 "$filename" && xclip -selection clipboard -t image/png "$filename" 
+
+filename="$IMAGE_OUTPUT_DIR/screenshot_$(date +%d-%m-%y_%H:%M:%S)"
+sep = ""
+i = ""
+while [ -e $filename$sep$i ]; do
+    sep="#"
+    [ -n $i ] && i=$(( $i + 1 ))
+    [ -z $i ] && i=1
+done
+filename="$filename$sep$i.png"
+
+scrot "$@" "$filename" && xclip -selection clipboard -t image/png "$filename" 
 notify-send -i "$filename" "Screenshot" "Screenshot saved to $filename and copied to clipboard" -r 923

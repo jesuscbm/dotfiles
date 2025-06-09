@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+SEP1="$(printf '\x1d')"
+SEP2="$(printf '\x1e')"
+HISTFILE="$HOME/.cliphist"
+
+last=$(tail -n 1 "$HISTFILE" 2>/dev/null) || last=""
+
+while true; do
+  clip=$(xclip -selection clipboard -o 2>/dev/null)
+  if [[ "$clip" != "$last" && -n "$clip" ]]; then
+    echo -n "$SEP1$(date +%Y-%m-%d_%H:%M:%S)$SEP2$clip" >> "$HISTFILE"
+    last="$clip"
+  fi
+  sleep 1
+done
