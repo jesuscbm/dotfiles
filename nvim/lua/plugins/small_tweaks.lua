@@ -44,7 +44,7 @@ return {
 	{
 		'riodelphino/cheat.nvim',
 		opts = {
-			debug = false,   -- show debug msg (only for me)
+			debug = false, -- show debug msg (only for me)
 			readonly = false, -- true | false  ... false for editable
 			window = {
 				default = 'float', -- float | vsplit | hsplit
@@ -70,12 +70,12 @@ return {
 			},
 			file = {
 				dir = '~/.config/nvim/cheatsheets', -- Cheatsheet directory
-				prefix = '',        -- Cheatsheet file's prefix.
-				ext = 'md',         -- Cheatsheet file's extension.
+				prefix = '',            -- Cheatsheet file's prefix.
+				ext = 'md',             -- Cheatsheet file's extension.
 			},
 			cheatsheets = {
-				filetypes = {                   -- Open the specific cheatsheet by file pattern.
-					lua = { '*.lua' },          -- will open 'lua.md' cheatsheet, if called on *.lua files
+				filetypes = {               -- Open the specific cheatsheet by file pattern.
+					lua = { '*.lua' },      -- will open 'lua.md' cheatsheet, if called on *.lua files
 					vim = { '*.vim', '*.vifmrc' }, -- The key 'vim' is the surfix of filename. ex.) cheat-vim.md
 					js = { '*.js', '*.mjs' },
 					css = { '*.css', '*.scss', '*.sass' }, -- Multiple filetypes are allowed.
@@ -117,6 +117,27 @@ return {
 			require("mini.cursorword").setup()
 			require("mini.surround").setup()
 			require("mini.pairs").setup()
+		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		config = function()
+			require('nvim-ts-autotag').setup({
+				opts = {
+					-- Defaults
+					enable_close = true, -- Auto close tags
+					enable_rename = true, -- Auto rename pairs of tags
+					enable_close_on_slash = false -- Auto close on trailing </
+				},
+				-- Also override individual filetype configs, these take priority.
+				-- Empty by default, useful if one of the "opts" global settings
+				-- doesn't work well in a specific filetype
+				per_filetype = {
+					["html"] = {
+						-- enable_close = false
+					}
+				}
+			})
 		end,
 	},
 	{ "tpope/vim-sleuth" },

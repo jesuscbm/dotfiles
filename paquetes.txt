@@ -5,6 +5,7 @@ base
 base-devel
 bat
 betterlockscreen
+bind
 blueman
 bluez-tools
 bluez-utils
@@ -33,6 +34,7 @@ fastfetch
 feh
 fortune-mod
 fzf-tab-git
+gdb
 gh0stzk-icons-tokyo-night
 gimp
 git
@@ -50,6 +52,7 @@ gvfs-mtp
 htop
 i3lock-color
 imagemagick
+inetutils
 jre21-openjdk
 kitty
 lesspipe
@@ -61,8 +64,11 @@ lightdm-webkit-theme-litarvan
 lightdm-webkit2-greeter
 linux
 linux-firmware
+love
 lxappearance
+man-pages
 materia-gtk-theme
+mdbtools
 mpd
 mpv
 ncdu
@@ -70,6 +76,7 @@ neofetch
 neovim
 networkmanager
 nmap
+noto-fonts-emoji
 npm
 nsxiv
 ntfs-3g
@@ -128,6 +135,7 @@ typst
 ueberzug
 ufw
 unrar
+valgrind
 vim
 vimix-gtk-themes
 vivid

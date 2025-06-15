@@ -174,7 +174,7 @@ eval "$(zoxide init zsh)"
 # Enviroment variables
 export EDITOR="nvim"
 export TERMINAL="kitty"
-export BROWSER="zen-browser"
+export BROWSER="librewolf"
 export MANPAGER='nvim +Man!'
 
 # export JAVA_HOME=/home/jesus/jdk-23.0.2
