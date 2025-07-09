@@ -56,14 +56,79 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-if [ "$color_prompt" = yes ]; then
-    PROMPT_COMMAND="$PROMPT_COMMAND;EXIT_STT=\$?;TERM_WIDTH=\$(tput cols);PWD_LENGTH=\$((\$(pwd | wc -m)-8));SHORT_PWD=\$(pwd | tr '/' ' ' | awk '{printf(\".../%s/%s\", \$(NF-1), \$(NF))}')"
+# Colors (ANSI escape codes)
+RESET='\[\e[0m\]'
+FG_WHITE='\[\e[97m\]'
+FG_CYAN='\[\e[36m\]'
+FG_GREEN='\[\e[32m\]'
+FG_YELLOW='\[\e[33m\]'
+FG_RED='\[\e[31m\]'
+BG_MAGENTA='\[\e[45m\]'
+BG_BLUE='\[\e[44m\]'
+BG_GREEN='\[\e[42m\]'
+BG_RED='\[\e[41m\]'
 
-    PS1='${debian_chroot:+($debian_chroot)}\[\e[37m\]┌──[$(if [ $TERM_WIDTH -ge 60 ] && [ $PWD_LENGTH -lt $(($TERM_WIDTH - 38)) ]; then printf "\[\e[94;1m\]\u\[\e[94m\]@\[\e[94m\]\h\[\e[0;37m\]:\[\e[38;5;46;1m\]\w\[\e[0;37m\]"; elif [ $TERM_WIDTH -lt 60 ] && [ $PWD_LENGTH -lt $TERM_WIDTH ]; then printf "\[\e[38;5;46;1m\]\w\[\e[0;37m\]";elif [ $TERM_WIDTH -ge 60 ] && [ $PWD_LENGTH -ge $(($TERM_WIDTH - 38)) ]; then printf "\[\e[94;1m\]\u\[\e[94m\]@\[\e[94m\]\h\[\e[0;37m\]:\[\e[38;5;46;1m\]%s\[\e[0;37m\]" $SHORT_PWD; else printf "\[\e[38;5;46;1m\]%s\[\e[0;37m\]" $SHORT_PWD;fi)]$(if git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [ $TERM_WIDTH -ge 60 ]; then printf "──[\[\e[95;1m\]%s\[\e[37m\]]" $(git branch --show-current); elif [ $TERM_WIDTH -ge 60 ]; then echo "──[\[\e[95;1m\]\t\[\e[37m\]]"; fi)\n╰─$(if [ $EXIT_STT -eq 0 ]; then echo "\[\e[94;1m\]"; else echo "\[\e[91;1m\]"; fi)\$\[\e[0m\] '
+BG_PURPLE='\[\e[48;5;127m\]'
+BG_PINK='\[\e[48;5;164m\]'
+BG_MAGENTA='\[\e[48;5;134m\]'
+FG='\[\e[38;5;15m\]'
+FG_PURPLE='\[\e[38;5;127m\]'
+FG_PINK='\[\e[38;5;164m\]'
+FG_MAGENTA='\[\e[38;5;134m\]'
 
-else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
+# Git branch or venv
+function branch_or_venv() {
+    if [ -n "$VIRTUAL_ENV" ]; then
+        echo -e "󰌠 $(basename "$VIRTUAL_ENV")"
+    elif git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+        BRANCH=$(git branch --show-current)
+        echo -e " $BRANCH"
+    else
+        echo -e "󰥔 $(date +%_H:%M | tr -d ' ')"
+    fi
+}
+
+# Exit status indicator
+function exit_status_symbol() {
+    local EXIT=$?
+    if [ "$EXIT" -eq 0 ]; then
+        echo -e "${FG_CYAN} 󰣇 ${RESET}"
+    else
+        echo -e "${FG_RED} 󰣇 ${RESET}"
+    fi
+}
+
+# Short PWD formatter
+function short_pwd() {
+    local path=$(pwd)
+    local shortened=$(echo "$path" | awk -F/ '{if (NF>=2) printf ".../%s/%s", $(NF-1), $NF; else print $0}')
+    echo "$shortened"
+}
+
+# Construct prompt
+function set_bash_prompt() {
+    local COLUMNS=$(tput cols)
+    local PWD_LEN=${#PWD}
+    local SHORT_PATH=$(short_pwd)
+    local JOB_COUNT=$(jobs -p | wc -l)
+    local STATUS=$(exit_status_symbol)
+    local BRANCH=$(branch_or_venv)
+
+    local PROMPT_LEFT=""
+    if [ "$COLUMNS" -ge 60 ] && [ "$PWD_LEN" -lt $((COLUMNS - 38)) ]; then
+	PROMPT_LEFT="${FG}${FG_PURPLE}${RESET}${BG_PURPLE}${FG} \u ${RESET}${BG_PINK}${FG_PURPLE}${RESET}${BG_PINK}${FG} \w ${RESET}"
+    elif [ "$COLUMNS" -lt 60 ] && [ "$PWD_LEN" -lt "$COLUMNS" ]; then
+        PROMPT_LEFT="${BG_PINK}${FG}${RESET}${BG_PINK}${FG} \w ${RESET}"
+    elif [ "$COLUMNS" -ge 60 ]; then
+        PROMPT_LEFT="${FG}${FG_PURPLE}${RESET}${BG_PURPLE}${FG} \u ${RESET}${BG_PINK}${FG_PURPLE}${RESET}${BG_PINK}${FG} $SHORT_PATH ${RESET}"
+    else
+        PROMPT_LEFT="${BG_PINK}${FG}${RESET}${BG_PINK}${FG} $SHORT_PATH ${RESET}"
+    fi
+
+    PS1="${PROMPT_LEFT}${BG_MAGENTA}${FG_PINK}${RESET}${BG_MAGENTA}${FG}${BRANCH}${RESET}${FG_MAGENTA}${RESET}\n${STATUS}${FG_CYAN}󰅂 ${RESET}"
+}
+
+PROMPT_COMMAND="set_bash_prompt"
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
@@ -121,8 +186,15 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(zoxide init bash)"
+alias lf='lfcd'
+alias ll='exa -l'
+alias la='exa -a'
+alias l='exa'
+alias ls='exa'
+alias tonto='echo no hablas de nacho, eso esta claro'
 alias givemeass='objdump -drwC -Mintel'
 alias nv="nvim"
+alias v="nvim"
 alias fullgrind='valgrind --leak-check=full -s --track-origins=yes'
 alias pls=sudo
 alias thanks='echo de nada'
@@ -133,6 +205,15 @@ alias heaviestfiles="sudo find / -type f -size +500M 2>/dev/null | xargs du -h |
 alias brainrot="mpv --vo=kitty --really-quiet ~/.local/share/nvim/lazy/brainrot.nvim/brainrot.mp4"
 alias image="kitty +kitten icat"
 alias diffk="kitty +kitten diff"
+alias myip="curl http://ipecho.net/plain; echo"
+alias danisay="fortune | tr '\\n' ' ' | xargs -I{} -0 dsay \"{}\""
+alias zotyalbum='zotify --output "new/{artist}/{album}/{track_number}-{artists} - {song_name}"'
+alias rt='trash'
+alias rm='echo "Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply == y ]] && rm -rf'
+alias changewp='feh --bg-fill -z --recursive Downloads/.wallpapers2/'
+alias dmenu="dmenu -nb #1a1b26 -nf #c0caf5 -sb #bb9af7 -sf #15161e -i -fn 'FiraCode Nerd Font:size=11'"
+alias c=clear
+alias g=git
 
 export PATH=$PATH:~/.custom_commands:/usr/local/texlive/2024/bin/x86_64-linux:~/jdk-23.0.2/bin:~/Documents/apache-maven-3.9.9/bin
 
@@ -141,13 +222,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
-selection=$(echo "apt dragon-and-cow kangaroo pony-smaller turtle bud-frogs duck kiss ren tux bunny elephant koala sheep unipony calvin elephant-in-snake kosh skeleton unipony-smaller cheese eyes luke-koala snowman vader cock flaming-sheep mech-and-cow stegosaurus vader-koala cower fox milk stimpy www daemon ghostbusters moofasa suse default gnu moose three-eyes dragon hellokitty pony turkey" | cut -d " " -f $(($RANDOM % 47 + 1)))
-
-if [[ $(tput cols) -ge 70 ]]; then
-    if [[ $(($RANDOM % 2 )) -eq 1 ]]; then
-	fortune | cowsay -f $selection   
-    else
-	fortune | cowthink -f $selection   
-    fi
-    echo
-fi
+# selection=$(echo "apt dragon-and-cow kangaroo pony-smaller turtle bud-frogs duck kiss ren tux bunny elephant koala sheep unipony calvin elephant-in-snake kosh skeleton unipony-smaller cheese eyes luke-koala snowman vader cock flaming-sheep mech-and-cow stegosaurus vader-koala cower fox milk stimpy www daemon ghostbusters moofasa suse default gnu moose three-eyes dragon hellokitty pony turkey" | cut -d " " -f $(($RANDOM % 47 + 1)))
+#
+# if [[ $(tput cols) -ge 70 ]]; then
+#     if [[ $(($RANDOM % 2 )) -eq 1 ]]; then
+# 	fortune | cowsay -f $selection   
+#     else
+# 	fortune | cowthink -f $selection   
+#     fi
+#     echo
+# fi

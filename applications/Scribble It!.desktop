@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Scribble It!
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/1088150
+Icon=steam_icon_1088150
+Terminal=false
+Type=Application
+Categories=Game;

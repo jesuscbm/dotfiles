@@ -8,7 +8,17 @@ IMAGE_OUTPUT_DIR="$HOME/Pictures/Screenshots"
 
 start_recording() {
     mkdir -p "$VIDEO_OUTPUT_DIR"
-    filename = "$VIDEO_OUTPUT_DIR/$1.mp4"
+    filename="$VIDEO_OUTPUT_DIR/recording_$(date +%d-%m-%y_%H:%M:%S)"
+    sep=""
+    i=""
+    while [ -e "$filename$sep$i.mp4" ]; do
+        sep="#"
+        [ -n $i ] && i=$(( $i + 1 ))
+        [ -z $i ] && i=1
+    done
+    filename="$filename$sep$i.mp4"
+
+
     ffmpeg -y -video_size "$RESOLUTION" -framerate "$FPS" -f x11grab -i :0.0 "$filename" > /dev/null 2>&1 &
     echo $! > "$RECORD_PID_FILE"
     notify-send "FFmpeg" "Screen recording started"
@@ -28,9 +38,9 @@ take_screenshot() {
     IMAGE_OUTPUT_DIR="$HOME/Pictures/Screenshots"
 
     filename="$IMAGE_OUTPUT_DIR/screenshot_$(date +%d-%m-%y_%H:%M:%S)"
-    sep = ""
-    i = ""
-    while [ -e $filename$sep$i ]; do
+    sep=""
+    i=""
+    while [ -e "$filename$sep$i.png" ]; do
         sep="#"
         [ -n $i ] && i=$(( $i + 1 ))
         [ -z $i ] && i=1
@@ -50,7 +60,7 @@ case "$choice" in
     "Fullscreen screenshot") take_screenshot ;;
     "Window screenshot") take_screenshot --focused ;;
     "Region screenshot") take_screenshot "-s -f" ;;
-    "Start recording") start_recording $filename ;;
-    "Stop recording") stop_recording $filename ;;
+    "Start recording") start_recording ;;
+    "Stop recording") stop_recording ;;
     *) exit 0 ;;
 esac

@@ -1,6 +1,6 @@
 return {
 	-- Quality of life improvements
-	{ "glacambre/firenvim",                 build = ":call firenvim#install(0)" },
+	{ "glacambre/firenvim", build = ":call firenvim#install(0)" },
 	{ "lukas-reineke/indent-blankline.nvim" },
 	{
 		"jiaoshijie/undotree",
@@ -38,57 +38,114 @@ return {
 		},
 	},
 	{
-		'norcalli/nvim-colorizer.lua',
-		keys = { { "<leader>co", "<cmd>ColorizerToggle<cr>", desc = "[CO]lorizer toggle" } },
+		"brenoprata10/nvim-highlight-colors",
+		config = function()
+			require('nvim-highlight-colors').setup({})
+		end
 	},
 	{
-		'riodelphino/cheat.nvim',
+		"max397574/colortils.nvim",
+		cmd = "Colortils",
+		keys = {
+			{ "<leader>co", "<cmd>Colortils picker<cr>", desc = "[CO]lortils" },
+		},
+		config = function()
+			require("colortils").setup({
+				-- Register in which color codes will be copied
+				register = "+",
+				-- Preview for colors, if it contains `%s` this will be replaced with a hex color code of the color
+				color_preview = "█ %s",
+				-- The default in which colors should be saved
+				-- This can be hex, hsl or rgb
+				default_format = "hex",
+				-- String: default color if no color is found
+				default_color = "#000000",
+				-- Border for the float
+				border = "rounded",
+				-- Some mappings which are used inside the tools
+				mappings = {
+					-- increment values
+					increment = "l",
+					-- decrement values
+					decrement = "h",
+					-- increment values with bigger steps
+					increment_big = "L",
+					-- decrement values with bigger steps
+					decrement_big = "H",
+					-- set values to the minimum
+					min_value = "0",
+					-- set values to the maximum
+					max_value = "$",
+					-- save the current color in the register specified above with the format specified above
+					set_register_default_format = "<cr>",
+					-- save the current color in the register specified above with a format you can choose
+					set_register_choose_format = "g<cr>",
+					-- replace the color under the cursor with the current color in the format specified above
+					replace_default_format = "<m-cr>",
+					-- replace the color under the cursor with the current color in a format you can choose
+					replace_choose_format = "g<m-cr>",
+					-- export the current color to a different tool
+					export = "E",
+					-- set the value to a certain number (done by just entering numbers)
+					set_value = "c",
+					-- toggle transparency
+					transparency = "T",
+					-- choose the background (for transparent colors)
+					choose_background = "B",
+					-- quit window
+					quit_window = { "q", "<esc>" },
+				},
+			})
+		end,
+	},
+	{
+		"riodelphino/cheat.nvim",
 		opts = {
 			debug = false, -- show debug msg (only for me)
 			readonly = false, -- true | false  ... false for editable
 			window = {
-				default = 'float', -- float | vsplit | hsplit
+				default = "float", -- float | vsplit | hsplit
 				float = {
 					width = 0.8, -- ratio for nvim window
 					height = 0.9, -- ratio for nvim window
 					signcolumn = false, -- true | false ... Show signcolumn or not
 					number = true, -- true | false ... Show number or not
-					border = 'single', -- 'none'  'single' | 'double' | 'rounded' | 'solid'
+					border = "single", -- 'none'  'single' | 'double' | 'rounded' | 'solid'
 				},
 				vsplit = {
 					height = 0.3, -- ratio for nvim window
-					position = 'bottom', -- bottom | top
+					position = "bottom", -- bottom | top
 					signcolumn = false, -- true | false ... Show signcolumn or not
 					number = true, -- true | false ... Show number or not
 				},
 				hsplit = {
 					width = 0.5, -- ratio for nvim window
-					position = 'left', -- left | right
+					position = "left", -- left | right
 					signcolumn = false, -- true | false ... Show signcolumn or not
 					number = true, -- true | false ... Show number or not
 				},
 			},
 			file = {
-				dir = '~/.config/nvim/cheatsheets', -- Cheatsheet directory
-				prefix = '',            -- Cheatsheet file's prefix.
-				ext = 'md',             -- Cheatsheet file's extension.
+				dir = "~/.config/nvim/cheatsheets", -- Cheatsheet directory
+				prefix = "", -- Cheatsheet file's prefix.
+				ext = "md", -- Cheatsheet file's extension.
 			},
 			cheatsheets = {
-				filetypes = {               -- Open the specific cheatsheet by file pattern.
-					lua = { '*.lua' },      -- will open 'lua.md' cheatsheet, if called on *.lua files
-					vim = { '*.vim', '*.vifmrc' }, -- The key 'vim' is the surfix of filename. ex.) cheat-vim.md
-					js = { '*.js', '*.mjs' },
-					css = { '*.css', '*.scss', '*.sass' }, -- Multiple filetypes are allowed.
-					md = { '*.md' },
-					php = { '*.php' },
-					html = { '*.html' },
-					typst = { '*.typ', '*.typst' },
-					latex = { '*.tex' },
+				filetypes = { -- Open the specific cheatsheet by file pattern.
+					lua = { "*.lua" }, -- will open 'lua.md' cheatsheet, if called on *.lua files
+					vim = { "*.vim", "*.vifmrc" }, -- The key 'vim' is the surfix of filename. ex.) cheat-vim.md
+					js = { "*.js", "*.mjs" },
+					css = { "*.css", "*.scss", "*.sass" }, -- Multiple filetypes are allowed.
+					md = { "*.md" },
+					php = { "*.php" },
+					html = { "*.html" },
+					typst = { "*.typ", "*.typst" },
+					latex = { "*.tex" },
 					-- Add more filetypes settings here.
 				},
 			},
 			keymaps = {
-				close = 'q', -- The keymap to close current cheat sheet. '<ESC>' is also good
+				close = "q", -- The keymap to close current cheat sheet. '<ESC>' is also good
 			},
 		},
 	},
@@ -102,12 +159,12 @@ return {
 		ft = { "markdown" },
 	},
 	{
-		'chomosuke/typst-preview.nvim',
-		ft = 'typst',
-		version = '1.*',
+		"chomosuke/typst-preview.nvim",
+		ft = "typst",
+		version = "1.*",
 		opts = {}, -- lazy.nvim will implicitly calls `setup {}`
 	},
-	{        -- Has a lot, worth checking git
+	{ -- Has a lot, worth checking git
 		"echasnovski/mini.nvim",
 		version = "*",
 		config = function()
@@ -117,17 +174,18 @@ return {
 			require("mini.cursorword").setup()
 			require("mini.surround").setup()
 			require("mini.pairs").setup()
+			require("mini.icons").setup()
 		end,
 	},
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()
-			require('nvim-ts-autotag').setup({
+			require("nvim-ts-autotag").setup({
 				opts = {
 					-- Defaults
 					enable_close = true, -- Auto close tags
 					enable_rename = true, -- Auto rename pairs of tags
-					enable_close_on_slash = false -- Auto close on trailing </
+					enable_close_on_slash = false, -- Auto close on trailing </
 				},
 				-- Also override individual filetype configs, these take priority.
 				-- Empty by default, useful if one of the "opts" global settings
@@ -135,8 +193,8 @@ return {
 				per_filetype = {
 					["html"] = {
 						-- enable_close = false
-					}
-				}
+					},
+				},
 			})
 		end,
 	},

@@ -36,3 +36,5 @@
 	prompt = true
 [advice]
 	addIgnoredFile = false
+[safe]
+	directory = /home/jesus/Desktop/uam/PAdSofUAM2

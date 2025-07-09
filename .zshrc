@@ -138,6 +138,7 @@ alias rm='echo "Want to use rm and not rt? (y/N)" && read -r reply && [[ $reply 
 alias changewp='feh --bg-fill -z --recursive Downloads/.wallpapers2/'
 alias dmenu="dmenu -nb #1a1b26 -nf #c0caf5 -sb #bb9af7 -sf #15161e -i -fn 'FiraCode Nerd Font:size=11'"
 alias c=clear
+alias g=git
 
 # KEYBINDINGS
 # zle -al to see all keybindings

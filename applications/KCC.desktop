@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Kindle Comic Converter
+Icon=book
+Exec=/home/jesus/Documents/kindleComicConverter.AppImage
+Terminal=false
+Categories=Book
+Keywords=kcc;kindle;comic;converter
+

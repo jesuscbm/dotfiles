@@ -113,10 +113,10 @@ return {
 				mapping = cmp.mapping.preset.insert({
 					-- Select the [n]ext item
 					-- ['<C-n>'] = cmp.mapping.select_next_item(),
-					['<C-Down>'] = cmp.mapping.select_next_item(),
+					["<C-Down>"] = cmp.mapping.select_next_item(),
 					-- Select the [p]revious item
 					-- ['<C-p>'] = cmp.mapping.select_prev_item(),
-					['<C-Up>'] = cmp.mapping.select_prev_item(),
+					["<C-Up>"] = cmp.mapping.select_prev_item(),
 
 					-- Scroll the documentation window [b]ack / [f]orward
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
@@ -174,7 +174,7 @@ return {
 			})
 		end,
 	},
-	{    -- Shows diagnostics in a floating window
+	{ -- Shows diagnostics in a floating window
 		"folke/trouble.nvim",
 		opts = {}, -- for default options, refer to the configuration section for custom setup.
 		cmd = "Trouble",
@@ -243,5 +243,21 @@ return {
 		init = function()
 			table.insert(require("cmp").get_config().sources, { name = "git" })
 		end,
+	},
+	-- using lazy.nvim
+	{
+		"S1M0N38/love2d.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- this are the default values
+			path_to_love_bin = "love",
+			path_to_love_library = vim.fn.globpath(vim.o.runtimepath, "love2d/library"),
+			restart_on_save = false,
+		},
+		keys = {
+			{ "<leader>v", ft = "lua", desc = "LÖVE" },
+			{ "<leader>vv", "<cmd>LoveRun<cr>", ft = "lua", desc = "Run LÖVE" },
+			{ "<leader>vs", "<cmd>LoveStop<cr>", ft = "lua", desc = "Stop LÖVE" },
+		},
 	},
 }
