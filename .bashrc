@@ -90,8 +90,8 @@ function branch_or_venv() {
 
 # Exit status indicator
 function exit_status_symbol() {
-    local EXIT=$?
-    if [ "$EXIT" -eq 0 ]; then
+    local EXIT=$1
+    if [ "$EXIT" -eq 0 ] || [ -z "$EXIT" ]; then
         echo -e "${FG_CYAN} 󰣇 ${RESET}"
     else
         echo -e "${FG_RED} 󰣇 ${RESET}"
@@ -107,11 +107,11 @@ function short_pwd() {
 
 # Construct prompt
 function set_bash_prompt() {
+    local STATUS=$(exit_status_symbol "$?")
     local COLUMNS=$(tput cols)
     local PWD_LEN=${#PWD}
     local SHORT_PATH=$(short_pwd)
     local JOB_COUNT=$(jobs -p | wc -l)
-    local STATUS=$(exit_status_symbol)
     local BRANCH=$(branch_or_venv)
 
     local PROMPT_LEFT=""

@@ -12,7 +12,7 @@
     // primary: #C5C8C6; // <- elegant grayish-white
     primary: #b4f9f8; // <- screaming neon cyan
     ug: #0B2447;
-    font: "Monospace 11";
+    font: "Monospace 12";
     background-color: @bg;
     //dark: @bg;
     border: 0px;
@@ -25,7 +25,7 @@
 
 // defines different aspects of the window
 window {
-    width: 300;
+    width: 500;
     /*since line wont work with height, i comment it out 
     if you rather control the size via height
     just comment it out */

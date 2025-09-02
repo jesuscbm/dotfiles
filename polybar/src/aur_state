@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+status=$(curl -s -o /dev/null -w "%{http_code}" https://aur.archlinux.org/rpc/?v=5)
+if [ "$status" = "200" ]; then
+    echo "AUR is up"
+else
+    echo "AUR down or unreachable (HTTP $status)"
+fi
+

@@ -47,20 +47,29 @@ take_screenshot() {
     done
     filename="$filename$sep$i.png"
 
+    sleep 0.1
     scrot "$@" "$filename" && xclip -selection clipboard -t image/png "$filename" 
     notify-send -i "$filename" "Screenshot" "Screenshot saved to $filename and copied to clipboard" -r 923
 }
 
-menu="Fullscreen screenshot\nWindow screenshot\nRegion screenshot\nStart recording\nStop recording"
+pick_color () {
+    COLOR=$(xcolor)
 
-choice=$(echo -e "$menu" | rofi -dmenu -i -l 5 -p "Capture screen")
+    echo "$COLOR" | xclip -selection clipboard -t text/plain
+    notify-send "$COLOR" "<span background='$COLOR'>$COLOR</span> copied to clipboard" -r 923
+}
+
+menu="Fullscreen screenshot\nWindow screenshot\nRegion screenshot\nPick color\nStart recording\nStop recording"
+
+choice=$(echo -e "$menu" | rofi -dmenu -i -l 6 -p "Capture screen")
 
 
 case "$choice" in
     "Fullscreen screenshot") take_screenshot ;;
     "Window screenshot") take_screenshot --focused ;;
-    "Region screenshot") take_screenshot "-s -f" ;;
+    "Region screenshot") take_screenshot -s -f ;;
     "Start recording") start_recording ;;
     "Stop recording") stop_recording ;;
+    "Pick color") pick_color ;;
     *) exit 0 ;;
 esac

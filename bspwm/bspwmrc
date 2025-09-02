@@ -1,4 +1,10 @@
 #!/bin/sh
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Debug
+set -x
+exec 2> ~/.bspwmrc.log
 
 # Set root pointer and screen power settings
 xsetroot -cursor_name left_ptr &
@@ -7,7 +13,8 @@ xset s off
 xset s noblank
 
 # Launch keybindings
-pgrep -x sxhkd > /dev/null || sxhkd -c "$HOME/.config/bspwm/sxhkdrc" &
+pkill sxhkd
+sxhkd &
 
 # Picom (compositor)
 pkill picom
@@ -17,9 +24,6 @@ picom -b &
 export PATH="$HOME/.config/polybar/src:$PATH"
 export XDG_CURRENT_DESKTOP='bspwm'
 export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Monitor setup (custom)
-[ -x "$HOME/.config/polybar/src/MonitorSetup" ] && "$HOME/.config/polybar/src/MonitorSetup"
 
 # Launch Thunar daemon
 thunar --daemon &
@@ -43,13 +47,7 @@ bspc config pointer_action1 move
 bspc config pointer_action2 resize_side
 bspc config pointer_action3 resize_corner
 
-# Launch eww daemon if not running. TODO: Not use eww
-pgrep -x eww > /dev/null || eww -c "${HOME}"/.config/polybar/eww daemon &
-
 polybar top-bar &
-
-# Set system vars for polybar
-[ -x "$HOME/.config/polybar/src/SetSysVars" ] && "$HOME/.config/polybar/src/SetSysVars" &
 
 # Launch xsettingsd
 command -v xsettingsd >/dev/null && xsettingsd --config="${HOME}/.config/polybar/src/config/xsettingsd" >/dev/null 2>&1 &

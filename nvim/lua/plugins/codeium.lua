@@ -10,8 +10,8 @@ return {
 				enable_cmp_source = false,
 				enable_chat = true,
 				virtual_text = {
-					-- enabled = false, -- DISABLE TEMPORALLY
-					enabled = true,
+					enabled = false,
+					-- enabled = true,
 					-- These are the defaults
 					-- Set to true if you never want completions to be shown automatically.
 					manual = false,

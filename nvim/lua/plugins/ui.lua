@@ -13,8 +13,6 @@ return {
 		enable = true,
 
 	},
-	{ "nvim-tree/nvim-web-devicons" },
-
 	-- UI enhancements
 	{
 		"rawrrawrpurpledinosaur/brainrot.nvim",

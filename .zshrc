@@ -82,13 +82,15 @@ precmd() {
     PS1_BRANCH=$(if [ -n "$VIRTUAL_ENV" ]; then printf "󰌠 %s" $(basename "$VIRTUAL_ENV"); elif git rev-parse --is-inside-work-tree >/dev/null 2>&1 && [[ $COLUMNS -ge 60 ]]; then printf " %s" $(git branch --show-current); elif [ $COLUMNS -ge 60 ]; then echo "󰥔 %T"; fi)
 
     PS1_STATUS=$(if [[ $EXIT_STT -eq 0 ]]; then echo "%F{$OKCOLOR} 󰣇 %f"; else echo "%F{$ERRORCOLOR} 󰣇 %f"; fi)
+
+    PS1_INCOGNITO="$(if [[ -z $HISTFILE ]]; then echo "%F{$THIRDBGCOLOR} 󰗹%f"; fi)"
     NEWLINE=$'\n'
 
-    PROMPT=${debian_chroot:+($debian_chroot)}$PS1_NAME%F{015}%F{$SECONDBGCOLOR}%K{$THIRDBGCOLOR}%f%F{$THIRDFGCOLOR}$PS1_BRANCH%f%k%F{$THIRDBGCOLOR}%f$NEWLINE$PS1_STATUS%F{cyan}󰅂%f\ 
+    PROMPT=${debian_chroot:+($debian_chroot)}$PS1_NAME%F{015}%F{$SECONDBGCOLOR}%K{$THIRDBGCOLOR}%f%F{$THIRDFGCOLOR}$PS1_BRANCH%f%k%F{$THIRDBGCOLOR}%f$PS1_INCOGNITO$NEWLINE$PS1_STATUS%F{cyan}󰅂%f\ 
 
     JOBS="%F{117}Jobs: %j %f"
 
-    BATLEVEL=$(cat /sys/class/power_supply/BAT1/capacity)
+    BATLEVEL=$(cat /sys/class/power_supply/BAT0/capacity)
     if [ "$BATLEVEL" -ge 60 ]; then
 	BATCOLOR=cyan
     elif [ "$BATLEVEL" -ge 40 ]; then
@@ -139,6 +141,7 @@ alias changewp='feh --bg-fill -z --recursive Downloads/.wallpapers2/'
 alias dmenu="dmenu -nb #1a1b26 -nf #c0caf5 -sb #bb9af7 -sf #15161e -i -fn 'FiraCode Nerd Font:size=11'"
 alias c=clear
 alias g=git
+alias incognito="if [[ -z \$HISTFILE ]]; then HISTFILE=$HISTFILE; else unset HISTFILE; fi"
 
 # KEYBINDINGS
 # zle -al to see all keybindings

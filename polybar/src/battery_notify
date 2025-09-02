@@ -8,8 +8,8 @@ NOTIFIED_CRITICAL=false
 ASSETS="$HOME/.config/polybar/src/assets"
 
 while true; do
-    CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
-    STATUS=$(cat /sys/class/power_supply/BAT1/status)
+    CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
+    STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
     if [ "$STATUS" = "Discharging" ]; then
         if [ "$CAPACITY" -le "$CRITICAL_THRESHOLD" ] && ! $NOTIFIED_CRITICAL; then

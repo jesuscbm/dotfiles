@@ -27,7 +27,7 @@
 
 // defines different aspects of the window
 window {
-    width: 900;
+    width: 1100;
     /*since line wont work with height, i comment it out 
     if you rather control the size via height
     just comment it out */
