@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Irssi
+GenericName=IRC client
+Comment=IRC chat client
+Icon=text
+Exec=kitty --class Irssi -e irssi
+Terminal=false
+Categories=Chat;Internet
+Keywords=chat;irc;internet

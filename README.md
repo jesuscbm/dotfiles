@@ -5,13 +5,11 @@
 Dotfiles for my Linux setup, using Arch, BSPWM and polybar among other things.
 Meant for my personal use, but feel free to take what you want.
 
-![Desktop](./media/desktop_windows.png) 
+![Desktop](./media/desktop.png) 
 
 ![Btop and some windows](./media/btop.png)
 
-https://github.com/user-attachments/assets/8e5d4982-5b4d-473e-aa48-b6b7157dc668
-
-## Things done
+## Included
 
 - Battery notifications
 - Cmus and RMPC notifications

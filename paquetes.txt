@@ -42,6 +42,8 @@ gvfs
 gvim
 htop
 intel-ucode
+irssi
+jdk-openjdk
 keepassxc
 kitty
 libfprint
@@ -88,11 +90,12 @@ rofi
 rsync
 scrot
 seahorse
-senpai
+sl
 sof-firmware
 spotify
 spotify-adblock
 spotify-remove-ad-banner
+steam
 sudo
 sxhkd
 tealdeer

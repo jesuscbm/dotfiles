@@ -2,8 +2,8 @@
 
 status=$(curl -s -o /dev/null -w "%{http_code}" https://aur.archlinux.org/rpc/?v=5)
 if [ "$status" = "200" ]; then
-    echo "AUR is up"
+    printf "%%{F#9ece6a}󰣇%%{F-} \n"
 else
-    echo "AUR down or unreachable (HTTP $status)"
+    printf "%%{F#F7768E}󰣇%%{F-} \n"
 fi
 
