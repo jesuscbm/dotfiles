@@ -9,6 +9,10 @@ Meant for my personal use, but feel free to take what you want.
 
 ![Btop and some windows](./media/btop.png)
 
+
+https://github.com/user-attachments/assets/34e2275c-c201-47fc-9f09-97fde775025f
+
+
 ## Included
 
 - Battery notifications
